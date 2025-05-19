@@ -573,3 +573,54 @@ main + footer {
 main.bienvenida {
   margin-bottom: 2rem;
 }
+
+
+
+/* === AJUSTE QUIRÚRGICO DE ESPACIOS EN FOOTER === */
+@media screen and (max-width: 768px) {
+
+  .footer-info p,
+  .footer-enlaces li,
+  .footer-enlaces ul,
+  .footer-copy,
+  .footer-redes {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .footer-contenido {
+    gap: 0 !important;
+  }
+
+  .footer-redes {
+    gap: 0.2rem !important;
+    margin-top: 0.1rem !important;
+    margin-bottom: 0.1rem !important;
+  }
+
+  .footer-copy {
+    margin-top: 0.3rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .contenedor-footer {
+    padding-bottom: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+main.bienvenida {
+  margin-bottom: 2rem;
+}
+
+
+
+/* === CORRECCIÓN FLEX MOBILE: footer-info y footer-enlaces === */
+@media screen and (max-width: 768px) {
+
+  .footer-info,
+  .footer-enlaces {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
