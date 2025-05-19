@@ -345,34 +345,39 @@ main + footer {
 }
 
 /* ---------- COOKIES ---------- */
+/* 🍪 Botón cookies flotante estilo engranaje */
 .boton-cookies-config {
   position: fixed;
-  bottom: 1rem;
-  left: 2rem;
-  background-color: #ffffff;
-  padding: 0.5rem 1.2rem;
-  border-radius: 30px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  bottom: 1.2rem;
+  left: 0.8rem;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #f8f8f8, #dcdcdc);
+  border: 2px solid #999;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 1500;
-  white-space: nowrap;
-  max-width: max-content;
-  transition: transform 0.3s ease;
 }
 
 .boton-cookies-config a {
-  color: #0066cc;
-  font-weight: bold;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-.boton-cookies-config:hover {
-  transform: scale(1.05);
+  color: #2c3e50; /* gris oscuro metálico */
+  font-size: 1.5rem;
+  display: flex;
 }
 
 .boton-cookies-config a:hover {
-  text-decoration: underline;
+  color: #0066cc;
+  transform: rotate(20deg) scale(1.1);
 }
+
+.boton-cookies-config a span {
+  display: none;
+}
+
 
 /* ---------- BOTÓN ARRIBA ---------- */
 #btn-top {
@@ -445,6 +450,12 @@ main + footer {
     display: block;
     width: 100%;
   }
+
+  .redes-header {
+  margin-left: -2.5rem;
+  margin-top: 0.5rem;
+}
+
 
   .footer-contenido {
     flex-direction: column;
