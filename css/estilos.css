@@ -429,7 +429,19 @@ main + footer {
     margin-bottom: 0.4rem;
   }
 
- 
+ /* 🔽 Reduce espacio entre 'ver ubicación' y bloque legal */
+  .footer-info p:last-of-type {
+    margin-bottom: 0.5rem; /* o incluso 0 si lo quieres más pegado */
+  }
+
+  /* 🔼 Reduce espacio entre 'mapa web' y los iconos */
+  .footer-redes {
+    margin-top: 0.8rem;
+    margin-bottom: 2rem; /* si quieres que queden un poco separados del borde inferior */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
   .hamburguesa {
     display: block;
   }
