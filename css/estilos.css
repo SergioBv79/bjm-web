@@ -456,52 +456,52 @@ main + footer {
   margin-top: 0.5rem;
 }
 
-@media screen and (max-width: 768px) {
-
-  .contenedor-footer {
-    padding: 1rem 1rem 1.5rem; /* ⬅️ menos espacio inferior */
+.contenedor-footer {
+    padding: 0.5rem 0.5rem 1rem; /* ⬅️ menos espacio inferior */
   }
 
-  .footer-copy {
-    margin-top: 0.5rem; /* ⬅️ casi pegado al bloque de redes */
-  }
 
   .footer-contenido {
-    gap: 1rem; /* ⬅️ menos separación entre columnas */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  /* 🧩 Ajustes Footer */
+  .footer-info p:last-of-type {
+    margin-bottom: 0.5rem;
   }
 
   .footer-enlaces {
     margin-top: 0.5rem;
   }
 
-  .footer-enlaces li {
+    .footer-enlaces li {
     margin: 0.2rem 0;
   }
-
-  .footer-enlaces a {
-    font-size: 0.95rem;
+  .footer-enlaces li:last-child,
+  .footer-enlaces a:last-child {
+    margin-bottom: 0.4rem;
   }
 
-  .footer-info p,
-  .footer-info a {
-    margin: 0.2rem 0; /* ⬅️ menos verticalidad */
+  .footer-copy {
+    margin-top: 0.1rem;
   }
 
-}
-
-.footer-redes {
-    justify-content: center !important; /* fuerza al centro */
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  .footer-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.3rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
   }
 
   .footer-redes a {
     font-size: 1.4rem;
   }
-
-
 
   /* 🍪 Botón cookies */
   .boton-cookies-config {
