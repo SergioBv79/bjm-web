@@ -556,10 +556,6 @@ main + footer {
   transform: rotate(-10deg) scale(1.1);
 }
 
-
-
-
-/* 🎯 AJUSTES FINALES PARA VISTA MÓVIL - FOOTER COMPACTO Y SIN SOLAPES */
 @media screen and (max-width: 768px) {
   html, body {
     margin: 0;
@@ -613,7 +609,10 @@ main + footer {
     font-size: 1.3rem;
   }
 
-  /* Botón cookies alineado sin tapar */
+  .footer-redes a {
+    font-size: 1.3rem;
+  }
+
   .boton-cookies-config {
     bottom: 0.6rem !important;
     left: 0.6rem !important;
@@ -635,7 +634,6 @@ main + footer {
     font-size: 1.4rem;
   }
 
-  /* Botón subir alineado sin tapar */
   #btn-top {
     bottom: 0.6rem !important;
     right: 0.6rem !important;
