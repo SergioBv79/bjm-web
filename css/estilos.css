@@ -409,26 +409,10 @@ main + footer {
   padding: 0.5rem;
 }
 
-/* ---------- RESPONSIVE (solo en móvil) ---------- */
+/* ========== ESTILOS RESPONSIVE UNIFICADOS ========== */
 @media screen and (max-width: 768px) {
- 
- .footer-enlaces {
-  margin-top: 1.5rem;
-}
 
-.footer-redes {
-  margin-bottom: 0.5rem;
-}
-
-.footer-copy {
-  margin-top: 1.2rem;
-}
-
-.footer-enlaces li:last-child {
-  margin-bottom: 0.8rem;
-}
-
- 
+  /* Menú hamburguesa */
   .hamburguesa {
     display: block;
   }
@@ -463,6 +447,7 @@ main + footer {
     width: 100%;
   }
 
+  /* Footer organizado */
   .footer-contenido {
     flex-direction: column;
     align-items: center;
@@ -471,12 +456,22 @@ main + footer {
 
   .footer-redes {
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
-}
 
+  .footer-enlaces {
+    margin-top: 1.5rem;
+  }
 
-@media screen and (max-width: 768px) {
+  .footer-enlaces li:last-child {
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-copy {
+    margin-top: 1.2rem;
+  }
+
+  /* Botón de cookies */
   .boton-cookies-config {
     bottom: 1.2rem;
     left: 0.8rem;
@@ -500,9 +495,8 @@ main + footer {
   .boton-cookies-config a span {
     display: none;
   }
-}
 
-@media screen and (max-width: 768px) {
+  /* Botón subir */
   #btn-top {
     bottom: 2rem;
     right: 1.2rem;
@@ -511,4 +505,5 @@ main + footer {
     width: 44px;
     height: 44px;
   }
+
 }
