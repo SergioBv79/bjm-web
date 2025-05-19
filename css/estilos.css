@@ -415,6 +415,9 @@ main + footer {
 }
 
 /* ---------- RESPONSIVE (solo en móvil) ---------- */
+
+/* === BLOQUE RESPONSIVE UNIFICADO === */
+
 @media screen and (max-width: 768px) {
 
   .hamburguesa {
@@ -452,14 +455,14 @@ main + footer {
   }
 
   .redes-header {
-  margin-left: -2.5rem;
-  margin-top: 0.5rem;
-}
-
-.contenedor-footer {
-    padding: 0.5rem 1rem 0.5rem !important;/* ⬅️ menos espacio inferior */
+    margin-left: -2.5rem;
+    margin-top: 0.5rem;
   }
 
+  .contenedor-footer {
+    padding: 0.8rem 1rem 1rem !important;
+    margin-bottom: 2rem;
+  }
 
   .footer-contenido {
     flex-direction: column;
@@ -468,25 +471,38 @@ main + footer {
     gap: 0.5rem;
   }
 
-  /* 🧩 Ajustes Footer */
+  .footer-info p,
+  .footer-enlaces li,
+  .footer-copy {
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
   .footer-info p:last-of-type {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem !important;
   }
 
   .footer-enlaces {
-    margin-top: 0.5rem;
+    margin-top: 0.5rem !important;
   }
 
-    .footer-enlaces li {
-    margin: 0.2rem 0;
+  .footer-enlaces ul {
+    padding: 0 !important;
   }
-  .footer-enlaces li:last-child,
-  .footer-enlaces a:last-child {
-    margin-bottom: 0.4rem;
+
+  .footer-enlaces li {
+    margin: 0.1rem 0 !important;
+  }
+
+  .footer-enlaces a {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
   .footer-copy {
-    margin-top: 0.1rem;
+    margin-top: 0.8rem !important;
+    margin-bottom: 0.3rem !important;
+    font-size: 0.8rem;
   }
 
   .footer-redes {
@@ -494,19 +510,18 @@ main + footer {
     justify-content: center !important;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.3rem;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+    gap: 0.3rem !important;
+    margin-top: 0.3rem !important;
+    margin-bottom: 0.3rem !important;
   }
 
   .footer-redes a {
     font-size: 1.4rem;
   }
 
-  /* 🍪 Botón cookies */
   .boton-cookies-config {
-    bottom: 0.6rem !important;
-    left: 0.8rem;
+    bottom: 1rem !important;
+    left: 1rem;
     width: 48px;
     height: 48px;
     padding: 0;
@@ -516,6 +531,7 @@ main + footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999;
   }
 
   .boton-cookies-config a {
@@ -528,127 +544,29 @@ main + footer {
     display: none;
   }
 
-  /* ⬆️ Botón subir */
   #btn-top {
-  position: fixed;
-bottom: 0.6rem !important;
-  right: 0.8rem;
-  width: 48px;
-  height: 48px;
-  padding: 0;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  background: #1f1f1f;
-  color: white;
-  border: 2px solid #666;
-  box-shadow: 0 0 8px rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 1500;
-  }
-
-}
-
-#btn-top:hover {
-  background-color: #444;
-  transform: rotate(-10deg) scale(1.1);
-}
-
-
-
-
-
-
-/* === AJUSTES FOOTER Y BOTONES EN MÓVIL === */
-
-@media screen and (max-width: 768px) {
-
-  .contenedor-footer {
-    padding: 1rem 1rem 1.5rem !important; /* menos espacio inferior */
-    margin-bottom: 2rem; /* separa de botones flotantes */
-  }
-
-  .footer-redes {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    justify-content: center !important;
-  }
-
-  .footer-copy {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
-  }
-
-  .boton-cookies-config {
-    bottom: 1rem !important; /* SUBE UN POCO */
-    left: 1rem;
-    z-index: 9999;
-  }
-
-  #btn-top {
-    bottom: 1rem !important; /* SUBE UN POCO */
-    right: 1rem;
-    z-index: 9999;
-  }
-}
-
-main.bienvenida {
-  margin-bottom: 2rem;
-}
-
-
-/* === AJUSTES ESPACIOS FOOTER MOBILE V2 === */
-
-@media screen and (max-width: 768px) {
-
-  .contenedor-footer {
-    padding: 1rem 1rem 1.2rem !important;
-    margin-bottom: 2rem;
-  }
-
-  .footer-info p,
-  .footer-enlaces li,
-  .footer-copy {
-    margin-top: 0.2rem !important;
-    margin-bottom: 0.2rem !important;
-  }
-
-  .footer-enlaces {
-    margin-top: 0.5rem !important;
-  }
-
-  .footer-enlaces ul {
-    padding: 0 !important;
-  }
-
-  .footer-redes {
-    margin-top: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
-    justify-content: center !important;
-    gap: 0.5rem !important;
-  }
-
-  .footer-copy {
-    margin-top: 0.8rem !important;
-  }
-
-  .footer-info p:last-of-type {
-    margin-bottom: 0.3rem !important;
-  }
-
-  .boton-cookies-config {
-    bottom: 1rem !important;
-    left: 1rem;
-    z-index: 9999;
-  }
-
-  #btn-top {
+    position: fixed;
     bottom: 1rem !important;
     right: 1rem;
-    z-index: 9999;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    background: #1f1f1f;
+    color: white;
+    border: 2px solid #666;
+    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1500;
+  }
+
+  #btn-top:hover {
+    background-color: #444;
+    transform: rotate(-10deg) scale(1.1);
   }
 }
 
