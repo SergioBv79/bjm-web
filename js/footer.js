@@ -46,7 +46,10 @@ document.getElementById("footer").innerHTML = `
 
     <!-- Botón flotante de configuración de cookies -->
     <div class="boton-cookies-config">
-      <a href="politica-cookies.html#configuracion">Configurar cookies</a>
-    </div>
+  <a href="cookies.html" aria-label="Configurar cookies">
+    <i class="fas fa-cookie-bite"></i>
+  </a>
+</div>
+
   </div>
 `;
