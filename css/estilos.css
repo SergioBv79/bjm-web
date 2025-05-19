@@ -598,3 +598,60 @@ bottom: 0.6rem !important;
 main.bienvenida {
   margin-bottom: 2rem;
 }
+
+
+/* === AJUSTES ESPACIOS FOOTER MOBILE V2 === */
+
+@media screen and (max-width: 768px) {
+
+  .contenedor-footer {
+    padding: 1rem 1rem 1.2rem !important;
+    margin-bottom: 2rem;
+  }
+
+  .footer-info p,
+  .footer-enlaces li,
+  .footer-copy {
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .footer-enlaces {
+    margin-top: 0.5rem !important;
+  }
+
+  .footer-enlaces ul {
+    padding: 0 !important;
+  }
+
+  .footer-redes {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .footer-copy {
+    margin-top: 0.8rem !important;
+  }
+
+  .footer-info p:last-of-type {
+    margin-bottom: 0.3rem !important;
+  }
+
+  .boton-cookies-config {
+    bottom: 1rem !important;
+    left: 1rem;
+    z-index: 9999;
+  }
+
+  #btn-top {
+    bottom: 1rem !important;
+    right: 1rem;
+    z-index: 9999;
+  }
+}
+
+main.bienvenida {
+  margin-bottom: 2rem;
+}
