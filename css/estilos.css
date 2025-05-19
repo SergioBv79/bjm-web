@@ -1,11 +1,13 @@
-/* RESET GENERAL */
+/* ==========================
+   ✅ ESTILOS CSS - BJM FINAL
+   ========================== */
+
+/* ---------- RESET GENERAL ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 body {
   font-family: 'Rajdhani', sans-serif;
@@ -18,14 +20,8 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
-h1 {
-  font-size: 2.2rem;
-  letter-spacing: 0.5px;
-}
-
-h2 {
-  font-size: 1.6rem;
-}
+h1 { font-size: 2.2rem; letter-spacing: 0.5px; }
+h2 { font-size: 1.6rem; }
 
 img, video {
   max-width: 100%;
@@ -38,7 +34,7 @@ a {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* CONTENEDORES BÁSICOS */
+/* ---------- CONTENEDORES ---------- */
 .contenedor-header,
 .contenedor-footer {
   max-width: 1200px;
@@ -46,35 +42,36 @@ a {
   padding: 1rem;
 }
 
-/* ELIMINAR ESPACIO ENTRE CONTENIDO Y FOOTER */
+/* ---------- ESTRUCTURA GENERAL ---------- */
 main {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 main > *:last-child {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 main + footer {
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
 .bienvenida {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
-/* HEADER */
+/* ---------- CABECERA ---------- */
 .logo img {
   height: 60px;
 }
+
 .menu-principal {
-  margin-bottom: 0.9rem; /* 🔹 Espacio entre menú y redes */
+  margin-bottom: 0.9rem;
+  transition: max-height 0.3s ease;
 }
+
 .menu-principal ul {
   list-style: none;
   display: flex;
@@ -82,8 +79,8 @@ main + footer {
 }
 
 .menu-principal a {
-  transition: transform 0.3s ease, color 0.3s ease;
   display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .menu-principal a:hover {
@@ -95,13 +92,13 @@ main + footer {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  padding-left:3rem; /* 🔹 Empuja un poco a la izquierda o derecha para alinear */
+  padding-left: 3rem;
 }
+
 .redes-header a {
-  margin-left: 0.5rem;
   font-size: 1.2rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
   display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .redes-header a:hover {
@@ -109,7 +106,7 @@ main + footer {
   filter: brightness(1.2);
 }
 
-/* HERO VIDEO */
+/* ---------- HERO VIDEO ---------- */
 .hero-video {
   position: relative;
   overflow: hidden;
@@ -137,17 +134,15 @@ main + footer {
   width: 180px;
 }
 
-/* BIENVENIDA */
+/* ---------- BIENVENIDA ---------- */
 .bienvenida {
   max-width: 1200px;
   margin: 3rem auto;
-  padding: 0 1rem;
+  padding: 3rem 1rem;
   text-align: center;
   background-color: #f7f9fb;
   border-top: 3px solid #0066cc;
   border-bottom: 3px solid #0066cc;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .bienvenida .intro-destacada {
@@ -158,11 +153,11 @@ main + footer {
 
 .bloque-bienvenida {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
   margin-top: 2rem;
-  flex-wrap: wrap;
 }
 
 .bloque-bienvenida .bloque-texto {
@@ -176,18 +171,17 @@ main + footer {
 
 .bloque-bienvenida ul {
   list-style: none;
-  padding-left: 0;
 }
 
 .bloque-bienvenida li {
   margin-bottom: 1rem;
   font-size: 1.05rem;
-  position: relative;
   padding-left: 2rem;
+  position: relative;
 }
 
 .bloque-bienvenida li::before {
-  content: "\f0ad"; /* FontAwesome wrench icon */
+  content: "\f0ad";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   color: #28a745;
@@ -220,121 +214,7 @@ main + footer {
   color: #333;
 }
 
-/* FOOTER CON FONDO PERSONALIZADO ELEGIDO */
-.contenedor-footer {
-  position: relative;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #f0f0f0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-  padding: 2rem 1rem;
-  background-color: #fdfdfd;
-  overflow: hidden;
-}
-
-.contenedor-footer::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      rgba(9, 6, 17, 0.25),
-      rgba(12, 1, 39, 0.25)
-    ),
-    url("../img/fondo azul planos.jpg") no-repeat center center / cover;
-  z-index: 0;
-  opacity: 1;
-}
-
-.contenedor-footer > * {
-  position: relative;
-  z-index: 1;
-}
-
-.footer-info,
-.footer-enlaces,
-.footer-redes {
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.footer-enlaces ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  padding: 0;
-}
-
-.footer-enlaces a {
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.footer-enlaces a:hover {
-  transform: scale(1.1);
-}
-
-.footer-redes a {
-  margin: 0 0.5rem;
-  font-size: 1.3rem;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  display: inline-block;
-}
-
-.footer-redes a:hover {
-  transform: scale(1.15);
-  filter: brightness(1.2);
-}
-
-/* BOTÓN VOLVER ARRIBA CON DOBLE ICONO */
-#btn-top {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 2.5rem;
-  background: #1f1f1f;
-  color: white;
-  border: 2px solid #666;
-  font-size: 1.3rem;
-  border-radius: 50%;
-  padding: 0.8rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  transition: all 0.3s ease;
-  z-index: 1000;
-  display: none;
-}
-
-#btn-top i {
-  font-size: 1.1rem;
-}
-
-#btn-top:hover {
-  background-color: #444;
-  transform: rotate(-10deg) scale(1.15);
-}
-
-/* BOTÓN FLOTANTE COOKIES */
-.boton-cookies-config {
-  position: fixed;
-  bottom: 1rem;
-  left: 2.5rem;
-  background-color: #f1f1f1;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
-  z-index: 1000;
-}
-
-.boton-cookies-config a {
-  color: #0066cc;
-  font-weight: bold;
-}
-
+/* ---------- FRASE DESTACADA ---------- */
 .frase-destacada {
   font-size: 1.3rem;
   font-weight: 600;
@@ -361,29 +241,218 @@ main + footer {
   font-size: 1.5rem;
 }
 
+/* ---------- FOOTER ---------- */
+.contenedor-footer {
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #fdfdfd;
+  padding: 2rem 1rem 3rem;
+  overflow: hidden;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+}
 
-/* RESPONSIVE */
+.contenedor-footer::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../img/fondo azul planos.jpg") no-repeat center center / cover;
+  z-index: 0;
+  opacity: 1;
+}
+
+.contenedor-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-info,
+.footer-enlaces {
+  flex: 1 1 250px;
+}
+
+.footer-redes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: 1.4rem;
+  margin-top: -9rem; /* Subimos iconos de redes */
+}
+
+.footer-redes a {
+  color: #ccc;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-redes a:hover {
+  color: #fff;
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+.footer-info h4 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-info p,
+.footer-info a {
+  margin: 0.3rem 0;
+  color: #ddd;
+}
+
+.footer-info a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-enlaces ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-enlaces li {
+  margin: 0.4rem 0;
+}
+
+.footer-enlaces a {
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 2rem;
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+/* ---------- COOKIES ---------- */
+.boton-cookies-config {
+  position: fixed;
+  bottom: 1rem;
+  left: 2rem;
+  background-color: #ffffff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 1500;
+  white-space: nowrap;
+  max-width: max-content;
+  transition: transform 0.3s ease;
+}
+
+.boton-cookies-config a {
+  color: #0066cc;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.boton-cookies-config:hover {
+  transform: scale(1.05);
+}
+
+.boton-cookies-config a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- BOTÓN ARRIBA ---------- */
+#btn-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 2.5rem;
+  background: #1f1f1f;
+  color: white;
+  border: 2px solid #666;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  padding: 0.8rem 1rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#btn-top:hover {
+  background-color: #444;
+  transform: rotate(-10deg) scale(1.15);
+}
+
+/* ---------- MENÚ HAMBURGUESA ---------- */
+.hamburguesa {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #111;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* ---------- RESPONSIVE (solo en móvil) ---------- */
 @media screen and (max-width: 768px) {
+  .hamburguesa {
+    display: block;
+  }
+
+  .menu-principal {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ccc;
+    max-height: 0;
+    overflow: hidden;
+    z-index: 1000;
+  }
+
+  .menu-principal.abierto {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
   .menu-principal ul {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 0 1.5rem;
+    gap: 1rem;
   }
 
-  .bloque-bienvenida {
-    flex-direction: column;
-  }
-
-  .overlay-logo img {
-    width: 130px;
-  }
-
-  .boton {
+  .menu-principal a {
+    font-size: 1.1rem;
+    display: block;
     width: 100%;
-    max-width: 300px;
   }
 
-  .contenedor-header,
-  .contenedor-footer {
-    padding: 1rem 0.5rem;
+  .footer-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-redes {
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 }
