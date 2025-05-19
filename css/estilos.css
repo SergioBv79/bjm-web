@@ -1,3 +1,4 @@
+
 /* ==========================
    ✅ ESTILOS CSS - BJM FINAL
    ========================== */
@@ -409,10 +410,26 @@ main + footer {
   padding: 0.5rem;
 }
 
-/* ========== ESTILOS RESPONSIVE UNIFICADOS ========== */
+/* ---------- RESPONSIVE (solo en móvil) ---------- */
 @media screen and (max-width: 768px) {
+ 
+ .footer-enlaces {
+  margin-top: 1.5rem;
+}
 
-  /* Menú hamburguesa */
+.footer-redes {
+  margin-bottom: 2.5rem;
+}
+
+.footer-copy {
+  margin-top: 1.2rem;
+}
+
+.footer-enlaces li:last-child {
+  margin-bottom: 0.8rem;
+}
+
+ 
   .hamburguesa {
     display: block;
   }
@@ -447,7 +464,6 @@ main + footer {
     width: 100%;
   }
 
-  /* Footer organizado */
   .footer-contenido {
     flex-direction: column;
     align-items: center;
@@ -456,47 +472,44 @@ main + footer {
 
   .footer-redes {
     justify-content: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2.5rem;
   }
+}
 
-  .footer-enlaces {
-    margin-top: 1.5rem;
-  }
 
-  .footer-enlaces li:last-child {
-    margin-bottom: 0.8rem;
-  }
-
-  .footer-copy {
-    margin-top: 1.2rem;
-  }
-
-  /* Botón de cookies */
+@media screen and (max-width: 768px) {
   .boton-cookies-config {
-    bottom: 1.2rem;
-    left: 0.8rem;
-    width: 48px;
-    height: 48px;
+    bottom: 2rem;
+    left: 1.2rem;
+    width: 50px;
+    height: 50px;
     padding: 0;
     border-radius: 50%;
     background-color: #fff;
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    box-shadow: 0 0 12px rgba(0,0,0,0.45);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1500;
   }
 
   .boton-cookies-config a {
     display: flex;
     color: #0066cc;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   .boton-cookies-config a span {
     display: none;
   }
+}
 
-  /* Botón subir */
+  .boton-cookies-config a span {
+    display: none;
+  }
+
+
+@media screen and (max-width: 768px) {
   #btn-top {
     bottom: 2rem;
     right: 1.2rem;
@@ -505,5 +518,4 @@ main + footer {
     width: 44px;
     height: 44px;
   }
-
 }
