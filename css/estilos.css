@@ -557,3 +557,106 @@ main + footer {
 }
 
 
+
+
+/* 🎯 AJUSTES FINALES PARA VISTA MÓVIL - FOOTER COMPACTO Y SIN SOLAPES */
+@media screen and (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .contenedor-footer {
+    padding: 0.5rem 0.8rem 0.8rem !important;
+  }
+
+  .footer-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .footer-info p,
+  .footer-info a {
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+  }
+
+  .footer-enlaces {
+    margin-top: 0.5rem;
+  }
+
+  .footer-enlaces li {
+    margin: 0.2rem 0;
+  }
+
+  .footer-enlaces a {
+    font-size: 0.95rem;
+  }
+
+  .footer-copy {
+    margin-top: 0.5rem;
+    margin-bottom: 0 !important;
+    font-size: 0.8rem;
+  }
+
+  .footer-redes {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.3rem !important;
+    font-size: 1.3rem;
+  }
+
+  /* Botón cookies alineado sin tapar */
+  .boton-cookies-config {
+    bottom: 0.6rem !important;
+    left: 0.6rem !important;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #999;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1600;
+  }
+
+  .boton-cookies-config a {
+    color: #2c3e50;
+    font-size: 1.4rem;
+  }
+
+  /* Botón subir alineado sin tapar */
+  #btn-top {
+    bottom: 0.6rem !important;
+    right: 0.6rem !important;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    background: #1f1f1f;
+    color: white;
+    border: 2px solid #666;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1600;
+  }
+
+  #btn-top:hover {
+    background-color: #444;
+    transform: rotate(-10deg) scale(1.1);
+  }
+}
