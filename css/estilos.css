@@ -411,49 +411,6 @@ main + footer {
 
 /* ---------- RESPONSIVE (solo en móvil) ---------- */
 @media screen and (max-width: 768px) {
-  .footer-redes {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-redes a {
-    font-size: 1.4rem;
-  }
-
-  .footer-enlaces a {
-    display: inline-block;
-    margin-bottom: 0.4rem;
-  }
-
- /* 🔽 Reduce espacio entre 'ver ubicación' y bloque legal */
-  .footer-info p:last-of-type {
-    margin-bottom: 0.5rem; /* o incluso 0 si lo quieres más pegado */
-  }
-
-  /* 🔼 Reduce espacio entre 'mapa web' y los iconos */
-  .footer-redes {
-    margin-top: 0.8rem;
-    margin-bottom: 2rem; /* si quieres que queden un poco separados del borde inferior */
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .footer-enlaces li:last-child {
-  margin-bottom: 0.5rem;
-}
-
-.footer-enlaces a:last-child {
-  margin-bottom: 0.5rem;
-}
-
-
-
-
-
 
   .hamburguesa {
     display: block;
@@ -495,14 +452,39 @@ main + footer {
     text-align: center;
   }
 
-  .footer-redes {
-    justify-content: center;
-    margin-bottom: 1.5rem;
+  /* 🧩 Ajustes Footer */
+  .footer-info p:last-of-type {
+    margin-bottom: 0.5rem;
   }
-}
 
+  .footer-enlaces {
+    margin-top: 1rem;
+  }
 
-@media screen and (max-width: 768px) {
+  .footer-enlaces li:last-child,
+  .footer-enlaces a:last-child {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-copy {
+    margin-top: 1rem;
+  }
+
+  .footer-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-redes a {
+    font-size: 1.4rem;
+  }
+
+  /* 🍪 Botón cookies */
   .boton-cookies-config {
     bottom: 1.2rem;
     left: 0.8rem;
@@ -526,9 +508,8 @@ main + footer {
   .boton-cookies-config a span {
     display: none;
   }
-}
 
-@media screen and (max-width: 768px) {
+  /* ⬆️ Botón subir */
   #btn-top {
     bottom: 2rem;
     right: 1.2rem;
@@ -537,4 +518,5 @@ main + footer {
     width: 44px;
     height: 44px;
   }
+
 }
