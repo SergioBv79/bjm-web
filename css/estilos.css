@@ -1,4 +1,3 @@
-
 /* ==========================
    ✅ ESTILOS CSS - BJM FINAL
    ========================== */
@@ -412,22 +411,23 @@ main + footer {
 
 /* ---------- RESPONSIVE (solo en móvil) ---------- */
 @media screen and (max-width: 768px) {
- 
- .footer-enlaces {
-  margin-top: 1.5rem;
-}
+  .footer-redes {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 
-.footer-redes {
-  margin-bottom: 2.5rem;
-}
+  .footer-redes a {
+    font-size: 1.4rem;
+  }
 
-.footer-copy {
-  margin-top: 1.2rem;
-}
-
-.footer-enlaces li:last-child {
-  margin-bottom: 0.8rem;
-}
+  .footer-enlaces a {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+  }
 
  
   .hamburguesa {
@@ -472,42 +472,36 @@ main + footer {
 
   .footer-redes {
     justify-content: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 
 
 @media screen and (max-width: 768px) {
   .boton-cookies-config {
-    bottom: 2rem;
-    left: 1.2rem;
-    width: 50px;
-    height: 50px;
+    bottom: 1.2rem;
+    left: 0.8rem;
+    width: 48px;
+    height: 48px;
     padding: 0;
     border-radius: 50%;
     background-color: #fff;
-    box-shadow: 0 0 12px rgba(0,0,0,0.45);
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1500;
   }
 
   .boton-cookies-config a {
     display: flex;
     color: #0066cc;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .boton-cookies-config a span {
     display: none;
   }
 }
-
-  .boton-cookies-config a span {
-    display: none;
-  }
-
 
 @media screen and (max-width: 768px) {
   #btn-top {
