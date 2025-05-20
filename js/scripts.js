@@ -38,3 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", checkFraseVisible);
   checkFraseVisible(); // por si ya está visible al cargar
 });
+
+
+document.querySelectorAll('a[href^="#"]').forEach(ancla => {
+  ancla.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});

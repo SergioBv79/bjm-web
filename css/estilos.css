@@ -172,6 +172,58 @@ main + footer {
   width: 180px;
 }
 
+
+
+
+
+/* 🔷 BARRA PERSONALIZADA TIPO NELEDA OSCURA */
+.barra-cta-personalizada {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: linear-gradient(to right, #e6f0ff, #0b214a); /* de azul claro a azul marino oscuro */
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 50px 50px 0;
+  gap: 1rem;
+}
+
+.btn-solicita,
+.btn-experto {
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Rajdhani', sans-serif;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.btn-solicita {
+  border-radius: 0 50px 50px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-left: -0.5rem;
+}
+
+.btn-experto {
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: -0.5rem;
+}
+
+.btn-solicita:hover,
+.btn-experto:hover {
+  background-color: white;
+  color: #0b214a;
+  transform: scale(1.05);
+}
+
+
+
 /* ---------- BIENVENIDA ---------- */
 .bienvenida {
   margin: 2rem auto 1rem auto;   /* menos separación arriba y abajo */
