@@ -4,7 +4,14 @@
 // Asegúrate de que el elemento <header id="header"></header> esté en el HTML principal
 
 document.getElementById("header").innerHTML = `
-  <div class="contenedor-header">
+  
+<div class="banner-top">
+  <i class="fas fa-people-carry-box" aria-hidden="true"></i>
+  Personas que cuidan lo que otras personas necesitan para seguir adelante.
+</div>
+
+
+<div class="contenedor-header">
     <div class="logo">
       <!-- 📌 Logo principal de la web -->
       <!-- LOGO DINÁMICO SEGÚN RUTA -->
