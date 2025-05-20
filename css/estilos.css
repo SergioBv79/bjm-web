@@ -536,6 +536,12 @@ main + footer {
   order: 2;
 }
 
+.bloque-bienvenida .bloque-texto h2 {
+  text-align: center;
+  margin: 0 auto 1rem auto;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
 
   .contenedor-footer {
     padding: 0.8rem 1rem 1rem !important;
