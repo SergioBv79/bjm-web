@@ -6,20 +6,19 @@
 document.getElementById("header").innerHTML = `
   
 <div class="banner-top">
-  <i class="fas fa-people-carry-box" aria-hidden="true"></i>
-  Personas que cuidan lo que otras personas necesitan para seguir adelante.
+  <a href="${location.pathname.includes('blog') || location.pathname.includes('trabajos') || location.pathname.includes('servicios') || location.pathname.includes('candidatos') ? '../index.html' : 'index.html'}" class="logo-banner">
+    <img src="${location.pathname.includes('blog') || location.pathname.includes('trabajos') || location.pathname.includes('servicios') || location.pathname.includes('candidatos') ? '../img/logo.png' : 'img/logo.png'}" alt="Logo BJM" />
+  </a>
+  <span class="lema-banner">
+    <i class="fas fa-people-carry-box" aria-hidden="true"></i>
+    Personas que cuidan lo que otras personas necesitan para seguir adelante.
+  </span>
 </div>
 
 
-<div class="contenedor-header">
-    <div class="logo">
-      <!-- 📌 Logo principal de la web -->
-      <!-- LOGO DINÁMICO SEGÚN RUTA -->
-      <a href="${location.pathname.includes('blog') || location.pathname.includes('trabajos') || location.pathname.includes('servicios') || location.pathname.includes('candidatos') ? '../index.html' : 'index.html'}">
-        <img src="${location.pathname.includes('blog') || location.pathname.includes('trabajos') || location.pathname.includes('servicios') || location.pathname.includes('candidatos') ? '../img/logo.png' : 'img/logo.png'}" alt="Logo BJM" />
-      </a>
-    </div>
 
+<div class="contenedor-header">
+    
     <!-- Botón hamburguesa para vista móvil -->
     <button id="menu-toggle" class="hamburguesa" aria-label="Abrir menú">
       <i class="fas fa-bars"></i>
