@@ -38,3 +38,16 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", checkFraseVisible);
   checkFraseVisible(); // por si ya está visible al cargar
 });
+
+
+// ACTIVAR MENÚ HAMBURGUESA EN MÓVIL
+document.addEventListener("DOMContentLoaded", function () {
+  const btnToggle = document.getElementById("menu-toggle");
+  const menu = document.querySelector(".menu-principal");
+
+  if (btnToggle && menu) {
+    btnToggle.addEventListener("click", () => {
+      menu.classList.toggle("abierto");
+    });
+  }
+});
