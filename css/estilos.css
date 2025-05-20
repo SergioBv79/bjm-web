@@ -635,3 +635,27 @@ main.bienvenida {
     max-width: 100% !important;
   }
 }
+
+
+@media screen and (min-width: 769px) {
+  .contenedor-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 2rem; /* espacio entre menú y redes */
+  }
+
+  .menu-principal {
+    flex-grow: 1;
+  }
+
+  .menu-principal ul {
+    justify-content: flex-start;
+  }
+
+  .redes-header {
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+}
