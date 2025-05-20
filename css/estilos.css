@@ -476,22 +476,27 @@ main + footer {
     display: block;
   }
 
-  .menu-principal {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    border-top: 1px solid #ccc;
-    max-height: 0;
-    overflow: hidden;
-    z-index: 1000;
-  }
+.menu-principal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255,0.97);
+  z-index: 9999;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow-y: auto;
+}
 
-  .menu-principal.abierto {
-    max-height: 500px;
-    padding: 1rem 0;
-  }
+.menu-principal.abierto {
+  transform: translateY(0);
+}
+
+
 
   .menu-principal ul {
     flex-direction: column;
