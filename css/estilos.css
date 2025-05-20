@@ -574,3 +574,12 @@ main.bienvenida {
   margin-bottom: 2rem;
 }
 
+
+/* === CORRECCIÓN: FLEX MOBILE - FOOTER BLOQUES === */
+@media screen and (max-width: 768px) {
+  .footer-info,
+  .footer-enlaces {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
