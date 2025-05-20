@@ -659,3 +659,50 @@ main.bienvenida {
     justify-content: flex-start;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+  .contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0 1rem;
+  }
+
+  .menu-principal {
+    position: absolute;
+    top: 100%; /* justo debajo */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ccc;
+    max-height: 0;
+    overflow: hidden;
+    z-index: 1000;
+  }
+
+  .menu-principal.abierto {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
+  .hamburguesa {
+    order: 1;
+  }
+
+  .redes-header {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .redes-header a {
+    font-size: 1.2rem;
+  }
+}
