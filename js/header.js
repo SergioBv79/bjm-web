@@ -2,12 +2,13 @@
 
 // Inserta este header en todas las páginas llamando a este script en el HTML
 // Asegúrate de que el elemento <header id="header"></header> esté en el HTML principal
-
 const base = location.pathname.includes("blog") || 
              location.pathname.includes("trabajos") || 
              location.pathname.includes("servicios") || 
+             location.pathname.includes("quienes-somos") ||  // ⬅️ añade esto
              location.pathname.includes("candidatos")
              ? "../" : "";
+
 
 document.getElementById("header").innerHTML = `
 
@@ -32,7 +33,7 @@ document.getElementById("header").innerHTML = `
   <nav class="menu-principal">
     <ul>
       <li><a href="${base}index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-      <li><a href="${base}quienes-somos.html"><i class="fa-solid fa-users"></i> Quiénes somos</a></li>
+      <li><a href="${base}quienes-somos/index.html"><i class="fa-solid fa-users"></i> Quiénes somos</a></li>
       <li><a href="${base}servicios/index.html"><i class="fa-solid fa-gears"></i> Servicios</a></li>
       <li><a href="${base}trabajos/index.html"><i class="fa-solid fa-screwdriver-wrench"></i> Casos de éxito</a></li>
       <li><a href="${base}trabaja.html"><i class="fa-solid fa-user-plus"></i> Trabaja con nosotros</a></li>

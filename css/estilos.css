@@ -176,12 +176,13 @@ main + footer {
 
 
 
-/* 🔷 BARRA PERSONALIZADA TIPO NELEDA OSCURA */
+/* 🔷 BARRA PERSONALIZADA TIPO OSCURA */
 .barra-cta-personalizada {
   width: 100%;
-  max-width: 1200px;
-  margin: 2rem auto;
-  background: linear-gradient(to right, #e6f0ff, #0b214a); /* de azul claro a azul marino oscuro */
+  width: 99vw;
+  max-width: none;
+  margin: 0rem auto;
+  background: linear-gradient(to right, #7196cd, #0b214a); /* de azul claro a azul marino oscuro */
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
@@ -433,13 +434,11 @@ main + footer {
   color: #ccc;
   font-size: 0.85rem;
 }
-
-/* ---------- COOKIES ---------- */
-/* 🍪 Botón cookies flotante estilo engranaje */
+/* Fondo circular gris */
 .boton-cookies-config {
   position: fixed;
-  bottom: 1.2rem;
-  left: 0.8rem;
+  bottom: 2rem;
+  left: 1.2rem;
   width: 52px;
   height: 52px;
   padding: 0;
@@ -453,20 +452,29 @@ main + footer {
   z-index: 1500;
 }
 
-.boton-cookies-config a {
-  color: #2c3e50; /* gris oscuro metálico */
-  font-size: 1.5rem;
+/* Botón azul más pequeño centrado dentro del gris */
+.boton-cookies-config .abrir-config-cookies {
+  all: unset;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #0a2d47; /* azul marino */
   display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+  transition: transform 0.3s ease, background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.boton-cookies-config a:hover {
-  color: #0066cc;
-  transform: rotate(20deg) scale(1.1);
+/* Efecto al pasar el ratón */
+.boton-cookies-config .abrir-config-cookies:hover {
+  transform: scale(1.1) rotate(20deg);
+  background-color: #06304d;
 }
 
-.boton-cookies-config a span {
-  display: none;
-}
 
 
 /* ---------- BOTÓN ARRIBA ---------- */
@@ -724,4 +732,147 @@ main.bienvenida {
   .banner-top .frase-banner i {
     display: none;
   }
+}
+
+
+@media (max-width: 768px) {
+  .barra-cta-personalizada {
+    width: 100vw;
+    max-width: 100vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0;
+  }
+
+  .btn-solicita,
+  .btn-experto {
+    flex: 1;
+    min-width: 48%;
+    margin: 0;
+    border-radius: 50px;
+    white-space: nowrap;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+/* ===============================
+   ✅ ESTILOS COOKIES
+   =============================== */
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0b214a;
+  color: white;
+  padding: 1rem;
+  font-size: 0.95rem;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cookie-banner p {
+  flex: 1 1 100%;
+  margin-bottom: 0.8rem;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cookie-buttons button {
+  background: white;
+  color: #0b214a;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cookie-buttons button:hover {
+  background-color: #f0f0f0;
+}
+
+.cookie-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.65);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cookie-modal-contenido {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  font-size: 0.95rem;
+}
+
+.cookie-modal h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #0b214a;
+}
+
+.cookie-modal label {
+  display: block;
+  margin: 0.75rem 0;
+}
+
+.cookie-modal-botones {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.cookie-modal-botones button {
+  padding: 0.5rem 1rem;
+  background-color: #0b214a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cookie-modal-botones button:hover {
+  background-color: #092036;
+}
+
+.oculto {
+  display: none !important;
+}
+
+.boton-cookies-config button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  background-color: #0b214a;
+  color: white;
+  padding: 0.6rem 0.8rem;
+  border-radius: 50%;
+  border: none;
+  z-index: 9999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  cursor: pointer;
 }
