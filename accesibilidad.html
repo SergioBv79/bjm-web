@@ -3,53 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Accesibilidad web | BJM Mantenimientos</title>
-  <meta name="description" content="Conoce el compromiso de BJM Mantenimientos con la accesibilidad web y la inclusión digital.">
+  <title>Accesibilidad | BJM Mantenimientos</title>
+  <meta name="description" content="Accesibilidad oficial de BJM Mantenimientos y Servicios Industriales.">
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    .pagina-legal {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: linear-gradient(135deg, #d8d8d8 25%, #c1c1c1 25%, #c1c1c1 50%, #d8d8d8 50%, #d8d8d8 75%, #c1c1c1 75%);
+      background-size: 40px 40px;
+      padding: 2rem 2.5rem;
+      border: 3px solid #111;
+      border-radius: 12px;
+      box-shadow: 12px 12px 30px rgba(0,0,0,0.4);
+      font-size: 1.05rem;
+      color: #111;
+      font-family: 'Rajdhani', sans-serif;
+      position: relative;
+    }
+
+    .pagina-legal h1,
+    .pagina-legal h2 {
+      color: #0b214a;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #0b214a;
+      margin-top: 2rem;
+      padding-bottom: 0.4rem;
+    }
+
+    .pagina-legal ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 1rem 0;
+    }
+
+    .pagina-legal li {
+      margin-bottom: 0.75rem;
+    }
+
+    .pagina-legal li i {
+      margin-right: 0.6rem;
+      color: #0b214a;
+    }
+
+    .pagina-legal a {
+      color: #0066cc;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .pagina-legal a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .pagina-legal {
+        margin: 2rem 1rem;
+        padding: 1.5rem 1.2rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Header dinámico -->
   <header id="header"></header>
 
-  <!-- Contenido principal -->
   <main class="pagina-legal">
+    <h1><i class="fas fa-cog"></i> Accesibilidad</h1>
+    
+<p>Nos comprometemos a ofrecer una web accesible para todas las personas.</p>
+<h2><i class="fas fa-cog"></i> Medidas adoptadas</h2>
+<ul>
+  <li><i class="fas fa-cog"></i> Navegación por teclado y lectores de pantalla.</li>
+  <li><i class="fas fa-cog"></i> Contraste adecuado y estructura clara.</li>
+  <li><i class="fas fa-cog"></i> Diseño responsive en todos los dispositivos.</li>
+</ul>
+<p>¿Alguna incidencia? Escríbenos a <a href="mailto:info@bjmantenimientos.es">info@bjmantenimientos.es</a></p>
 
-    <h1>Accesibilidad</h1>
-    <section class="bloque-bienvenida">
-      <div class="bloque-texto">
-        <p>
-          En <strong>BJM Mantenimientos y Servicios Industriales</strong> trabajamos para que nuestra web sea accesible para todas las personas, incluyendo aquellas con discapacidad o diversidad funcional.
-        </p>
-
-        <h2>Compromiso con la accesibilidad</h2>
-        <p>Este sitio web está desarrollado siguiendo las pautas de accesibilidad del <strong>W3C (WCAG 2.1 AA)</strong> y cumpliendo con los requisitos del <strong>Real Decreto 1112/2018</strong>.</p>
-
-        <h2>Medidas aplicadas</h2>
-        <ul>
-          <li>Diseño adaptativo para móviles, tablets y ordenadores</li>
-          <li>Contraste de colores adecuado</li>
-          <li>Compatibilidad con lectores de pantalla</li>
-          <li>Navegación mediante teclado</li>
-          <li>Texto descriptivo en enlaces e imágenes</li>
-        </ul>
-
-        <h2>Contacto sobre accesibilidad</h2>
-        <p>Si encuentras alguna dificultad para acceder a los contenidos o funcionalidades, puedes contactar con nosotros para ayudarnos a mejorar:</p>
-        <p><a href="mailto:info@bjmantenimientos.es">info@bjmantenimientos.es</a></p>
-      </div>
-    </section>
   </main>
 
-  <!-- Botón volver arriba -->
   <button id="btn-top" title="Volver arriba">&#8679;</button>
-
-  <!-- Footer dinámico -->
   <footer id="footer"></footer>
 
-  <!-- Scripts -->
   <script src="../js/header.js"></script>
   <script src="../js/footer.js"></script>
   <script src="../js/scripts.js"></script>
