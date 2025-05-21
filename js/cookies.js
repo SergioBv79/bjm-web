@@ -1,4 +1,3 @@
- 
 // cookies.js - Gestión completa de cookies
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -15,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const configHTML = `
     <div id="cookie-config-modal" class="cookie-modal oculto">
-      <div class="cookie-modal-contenido">
-        <h2>Configuración de cookies</h2>
+      <div class="cookie-modal-contenido configuracion-cookies animar-aparicion">
+        <h2><i class="fas fa-cogs"></i> Configuración de cookies</h2>
         <form id="cookie-options">
           <label><input type="checkbox" disabled checked> Cookies necesarias (siempre activas)</label><br>
           <label><input type="checkbox" id="analytics"> Cookies estadísticas</label><br>
@@ -62,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("cookies_accepted", "all");
     banner.remove();
     modal.classList.add("oculto");
+    activarGoogleAnalyticsSiProcede(); // activar GA tras aceptar
   });
 
   document.getElementById("reject-cookies").addEventListener("click", () => {
@@ -80,9 +80,48 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("cookies_accepted", "custom");
     banner.remove();
     modal.classList.add("oculto");
+    activarGoogleAnalyticsSiProcede(); // activar GA si corresponde
   });
 
   if (!localStorage.getItem("cookies_accepted")) {
     banner.classList.add("visible");
+  } else {
+    activarGoogleAnalyticsSiProcede();
   }
 });
+
+// ✅ ACTIVACIÓN DE GOOGLE ANALYTICS SOLO SI HAY CONSENTIMIENTO DE MARKETING
+function activarGoogleAnalyticsSiProcede() {
+  const consentimiento = localStorage.getItem("cookies_accepted");
+
+  if (consentimiento === "all") {
+    inyectarGA();
+  } else if (consentimiento === "custom") {
+    try {
+      const config = JSON.parse(localStorage.getItem("cookies_custom"));
+      if (config.marketing) {
+        inyectarGA();
+      }
+    } catch (error) {
+      console.error("Error leyendo configuración personalizada de cookies:", error);
+    }
+  }
+}
+
+// ✅ INYECTAR GA DINÁMICAMENTE (EDITAR EL ID CUANDO SE PUBLIQUE)
+function inyectarGA() {
+  const scriptTag = document.createElement("script");
+  scriptTag.async = true;
+  scriptTag.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"; // ← REEMPLAZAR ESTE ID CUANDO PUBLIQUES
+
+  const inlineScript = document.createElement("script");
+  inlineScript.textContent = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); // ← REEMPLAZAR ESTE ID TAMBIÉN
+  `;
+
+  document.head.appendChild(scriptTag);
+  document.head.appendChild(inlineScript);
+}

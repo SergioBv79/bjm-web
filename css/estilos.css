@@ -71,12 +71,25 @@ a {
 }
 
 /* ---------- CONTENEDORES ---------- */
-.contenedor-header,
-.contenedor-footer {
+.contenedor-header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
+
+/* El fondo del footer ocupará todo el ancho */
+.contenedor-footer {
+  width: 100%;
+  position: relative;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #fdfdfd;
+  padding: 2rem 1rem 3rem;
+  overflow: hidden;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
+}
+
 
 /* ---------- ESTRUCTURA GENERAL ---------- */
 main {
@@ -171,9 +184,6 @@ main + footer {
 .overlay-logo img {
   width: 180px;
 }
-
-
-
 
 
 /* 🔷 BARRA PERSONALIZADA TIPO OSCURA */
@@ -333,6 +343,7 @@ main + footer {
 }
 
 /* ---------- FOOTER ---------- */
+
 .contenedor-footer {
   position: relative;
   font-size: 1.1rem;
@@ -347,13 +358,15 @@ main + footer {
 .contenedor-footer::before {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
+  top: 0;
+  left: 0;
   height: 100%;
+  width: 100vw; /* 🔥 Esto fuerza a ocupar todo el ancho del viewport */
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../img/fondo azul planos.jpg") no-repeat center center / cover;
   z-index: 0;
   opacity: 1;
 }
+
 
 .contenedor-footer > * {
   position: relative;
@@ -511,6 +524,81 @@ main + footer {
   cursor: pointer;
   padding: 0.5rem;
 }
+
+/* ✅ DISEÑO INDUSTRIAL LEGAL */
+.pagina-legal {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: repeating-linear-gradient(
+    45deg,
+    #e0e0e0,
+    #e0e0e0 10px,
+    #d0d0d0 10px,
+    #d0d0d0 20px
+  );
+  padding: 2rem;
+  border: 3px solid #222;
+  border-radius: 8px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+  font-size: 1.05rem;
+  color: #111;
+  line-height: 1.6;
+}
+
+.pagina-legal h1, .pagina-legal h2 {
+  color: #0b214a;
+  border-bottom: 2px solid #0b214a;
+  padding-bottom: 0.4rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.pagina-legal h1::before,
+.pagina-legal h2::before {
+  content: "⚙️ ";
+  font-size: 1.2rem;
+  position: absolute;
+  left: -2rem;
+}
+
+.pagina-legal ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.pagina-legal ul li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.pagina-legal ul li::before {
+  content: "\\f0ad";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: #0b214a;
+}
+
+.pagina-legal a {
+  color: #0066cc;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.pagina-legal a:hover {
+  color: #004a99;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
 
 /* ---------- RESPONSIVE (solo en móvil) ---------- */
 
@@ -875,4 +963,86 @@ main.bienvenida {
   z-index: 9999;
   box-shadow: 0 2px 6px rgba(0,0,0,0.25);
   cursor: pointer;
+}
+
+/* ===============================
+   ✅ COOKIES: ESTILO MECÁNICO INDUSTRIAL
+   =============================== */
+.configuracion-cookies {
+  background: repeating-linear-gradient(45deg, #d3d3d3, #d3d3d3 4px, #c4c4c4 4px, #c4c4c4 8px);
+  border: 3px solid #2b2b2b;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  max-width: 450px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+  line-height: 1.4;
+}
+
+.configuracion-cookies h2 {
+  font-size: 1.4rem;
+  color: #0b1d38;
+  border-bottom: 2px dashed #0b1d38;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.configuracion-cookies label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.7rem 0;
+  padding: 0.4rem 0.6rem;
+  border-left: 4px solid #0b1d38;
+  background: #f4f4f4;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.configuracion-cookies label:hover {
+  background: #e0e0e0;
+}
+
+.configuracion-cookies input[type="checkbox"] {
+  transform: scale(1.1);
+  accent-color: #0b1d38;
+}
+
+.cookie-modal-botones {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+.cookie-modal-botones button {
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-family: 'Rajdhani', sans-serif;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.cookie-modal-botones button:first-child {
+  background: linear-gradient(to bottom, #0b1d38, #1e2e45);
+  color: #fff;
+}
+
+.cookie-modal-botones button:first-child:hover {
+  background: #1f3c63;
+  transform: scale(1.05);
+}
+
+.cookie-modal-botones button:last-child {
+  background: #ccc;
+  color: #222;
+}
+
+.cookie-modal-botones button:last-child:hover {
+  background: #bbb;
+  transform: scale(1.05);
 }
