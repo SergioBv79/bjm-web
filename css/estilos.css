@@ -975,3 +975,207 @@ main.bienvenida {
   background: #bbb;
   transform: scale(1.05);
 }
+
+/* =========================
+   🔧 ESTILOS HERO CARRUSEL
+   ========================= */
+
+.hero-carrusel {
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrusel-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carrusel-slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.carrusel-slide.activo {
+  opacity: 1;
+  z-index: 1;
+}
+
+.texto-carrusel h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background-color: rgba(0,0,0,0.5);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+}
+
+.texto-carrusel p {
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+  background-color: rgba(0,0,0,0.4);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+}
+
+/* =========================
+   ✨ ANIMACIÓN APARICIÓN
+   ========================= */
+
+.animar-aparicion {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animar-aparicion.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero-carrusel {
+    height: 50vh;
+  }
+
+  .texto-carrusel h1 {
+    font-size: 1.6rem;
+  }
+
+  .texto-carrusel p {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* 💥 BLOQUE INSTITUCIONAL POTENTE Y VISUAL */
+.bloque-institucional {
+  width: 100vw;
+  margin: 0;
+  padding: 4rem 0;
+  background: linear-gradient(to bottom right, #10141a, #0b214a);
+  color: #f4f4f4;
+  font-family: 'Rajdhani', sans-serif;
+  border-top: 4px solid #2c2c2c;
+  border-bottom: 4px solid #2c2c2c;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* NUEVO: contenedor interior centrado */
+.bloque-institucional .contenedor-max {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+
+.bloque-institucional h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #4ecdc4;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.bloque-institucional p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.bloque-institucional strong {
+  color: #4ecdc4;
+}
+
+.destacado-frase {
+  font-size: 1.4rem;
+  background: #1b2e3a;
+  padding: 1rem;
+  border-left: 6px solid #4ecdc4;
+  margin: 2rem 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: aparecer 1.2s ease-in-out;
+}
+
+.valores-bjm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.valor-item {
+  background-color: #1c2d3c;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.valor-item:hover {
+  transform: translateY(-8px);
+}
+
+.valor-item i {
+  font-size: 2rem;
+  color: #4ecdc4;
+  margin-bottom: 0.5rem;
+}
+
+.valor-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.valor-item p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Animaciones */
+@keyframes aparecer {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .bloque-institucional {
+    padding: 2rem 1.5rem;
+  }
+  .bloque-institucional h2 {
+    font-size: 1.6rem;
+  }
+  .destacado-frase {
+    font-size: 1.2rem;
+    flex-direction: column;
+    text-align: left;
+  }
+}
