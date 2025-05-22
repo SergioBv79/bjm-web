@@ -1,6 +1,8 @@
 // cookies.js - Gestión completa de cookies
 
 document.addEventListener("DOMContentLoaded", function () {
+  const consent = localStorage.getItem("cookies_accepted");
+
   const bannerHTML = `
     <div id="cookie-banner" class="cookie-banner">
       <p>Este sitio utiliza cookies para mejorar la experiencia del usuario y analizar el tráfico. Puedes aceptar todas, rechazarlas o configurarlas.</p>
@@ -29,11 +31,22 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   `;
 
-  document.body.insertAdjacentHTML("beforeend", bannerHTML);
+  // Insertar siempre el panel de configuración para que funcione la galleta
   document.body.insertAdjacentHTML("beforeend", configHTML);
 
-  const banner = document.getElementById("cookie-banner");
   const modal = document.getElementById("cookie-config-modal");
+
+  // Mostrar el banner SOLO si estamos en index.html o raíz
+  const path = window.location.pathname;
+  const esIndex = path.endsWith("index.html") || path === "/" || path.endsWith("/");
+
+  if (!consent && esIndex) {
+    document.body.insertAdjacentHTML("beforeend", bannerHTML);
+    document.getElementById("cookie-banner").classList.add("visible");
+  } else if (consent) {
+    activarGoogleAnalyticsSiProcede();
+  }
+
   const openConfig = document.getElementById("abrir-configuracion-cookies");
 
   if (openConfig) {
@@ -49,45 +62,43 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  document.getElementById("configure-cookies").addEventListener("click", () => {
-    modal.classList.remove("oculto");
+  document.addEventListener("click", function (e) {
+    if (e.target.id === "configure-cookies") {
+      modal.classList.remove("oculto");
+    }
+    if (e.target.id === "close-config") {
+      modal.classList.add("oculto");
+    }
+    if (e.target.id === "accept-cookies") {
+      localStorage.setItem("cookies_accepted", "all");
+      const banner = document.getElementById("cookie-banner");
+      if (banner) banner.remove();
+      modal.classList.add("oculto");
+      activarGoogleAnalyticsSiProcede();
+    }
+    if (e.target.id === "reject-cookies") {
+      localStorage.setItem("cookies_accepted", "necessary");
+      const banner = document.getElementById("cookie-banner");
+      if (banner) banner.remove();
+      modal.classList.add("oculto");
+    }
   });
 
-  document.getElementById("close-config").addEventListener("click", () => {
-    modal.classList.add("oculto");
+  document.addEventListener("submit", function (e) {
+    if (e.target.id === "cookie-options") {
+      e.preventDefault();
+      const accepted = {
+        analytics: document.getElementById("analytics").checked,
+        marketing: document.getElementById("marketing").checked
+      };
+      localStorage.setItem("cookies_custom", JSON.stringify(accepted));
+      localStorage.setItem("cookies_accepted", "custom");
+      const banner = document.getElementById("cookie-banner");
+      if (banner) banner.remove();
+      modal.classList.add("oculto");
+      activarGoogleAnalyticsSiProcede();
+    }
   });
-
-  document.getElementById("accept-cookies").addEventListener("click", () => {
-    localStorage.setItem("cookies_accepted", "all");
-    banner.remove();
-    modal.classList.add("oculto");
-    activarGoogleAnalyticsSiProcede(); // activar GA tras aceptar
-  });
-
-  document.getElementById("reject-cookies").addEventListener("click", () => {
-    localStorage.setItem("cookies_accepted", "necessary");
-    banner.remove();
-    modal.classList.add("oculto");
-  });
-
-  document.getElementById("cookie-options").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const accepted = {
-      analytics: document.getElementById("analytics").checked,
-      marketing: document.getElementById("marketing").checked
-    };
-    localStorage.setItem("cookies_custom", JSON.stringify(accepted));
-    localStorage.setItem("cookies_accepted", "custom");
-    banner.remove();
-    modal.classList.add("oculto");
-    activarGoogleAnalyticsSiProcede(); // activar GA si corresponde
-  });
-
-  if (!localStorage.getItem("cookies_accepted")) {
-    banner.classList.add("visible");
-  } else {
-    activarGoogleAnalyticsSiProcede();
-  }
 });
 
 // ✅ ACTIVACIÓN DE GOOGLE ANALYTICS SOLO SI HAY CONSENTIMIENTO DE MARKETING
