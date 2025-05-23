@@ -756,21 +756,6 @@ main.bienvenida {
   margin-bottom: 1rem;
 }
 
-.destacado-frase {
-  background: #0b214a;
-  color: #ffffff;
-  font-weight: 600;
-  padding: 1rem;
-  border-left: 4px solid #00ffff;
-  margin-top: 1.5rem;
-  display: inline-block;
-  border-radius: 6px;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
 
 /* === CORRECCIÓN: FLEX MOBILE - FOOTER BLOQUES === */
 @media screen and (max-width: 768px) {
@@ -1141,17 +1126,29 @@ main.bienvenida {
 }
 
 .destacado-frase {
-  font-size: 1.4rem;
-  background: #1b2e3a;
-  padding: 1rem;
-  border-left: 6px solid #4ecdc4;
-  margin: 2rem 0;
+  background: #1c2d3c;
+  color: #ffffff;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  animation: aparecer 1.2s ease-in-out;
+  padding: 1.2rem 2rem;
+  border-left: 5px solid #00ffff;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 95%;
+  width: 700px;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
+
+@media screen and (max-width: 768px) {
+  .destacado-frase {
+    width: 90%;
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+}
+
 
 .valores-bjm {
   display: grid;
