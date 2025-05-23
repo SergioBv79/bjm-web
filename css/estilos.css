@@ -1213,9 +1213,5 @@ main.bienvenida {
   .bloque-institucional h2 {
     font-size: 1.6rem;
   }
-  .destacado-frase {
-    font-size: 1.2rem;
-    flex-direction: column;
-    text-align: left;
-  }
+  
 }
