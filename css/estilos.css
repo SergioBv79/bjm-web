@@ -1126,7 +1126,7 @@ main.bienvenida {
 }
 
 .destacado-frase {
-  background: #0b214a;
+  background: #1c2d3c;
   color: #ffffff;
   font-weight: 600;
   padding: 1.2rem 2rem;
@@ -1144,12 +1144,18 @@ main.bienvenida {
 
 @media screen and (max-width: 768px) {
   .destacado-frase {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    padding: 1rem 1.5rem;
-    width: 95%;
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 1.5rem auto;
+    word-break: break-word;
   }
 }
+
 
 
 .valores-bjm {
