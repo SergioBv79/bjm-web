@@ -1259,12 +1259,12 @@ main.bienvenida {
   font-weight: 600;
 }
 
+
+
 /* 💥 EFECTO CLICK POP */
 .card-enlace.explosion {
   animation: pulse-pop 0.3s ease;
 }
-
-
 
 @keyframes pulse-pop {
   0% {
@@ -1292,4 +1292,108 @@ main.bienvenida {
     width: 85%;
     margin-bottom: 1rem;
   }
+}
+
+/* 🎯 HISTORIA BJM - ESTILO INDUSTRIAL DISTINTIVO */
+
+.historia-contenedor {
+  width: 100vw;
+  margin: 0;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(to right, #0a1126, #0b214a);
+  color: #f5f5f5;
+  font-family: 'Rajdhani', sans-serif;
+  border-top: 4px solid #00f0ff;
+  border-bottom: 4px solid #00f0ff;
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.2);
+}
+.historia-contenedor h2 {
+  color: #00f0ff;
+  border-bottom: 2px solid #00f0ff;
+  margin-top: 2rem;
+  padding-bottom: 0.4rem;
+  font-size: 1.7rem;
+}
+.historia-contenedor p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #dceeff;
+}
+.historia-contenedor strong {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.bloque-historia {
+  max-width: 1150px;
+  margin: 2rem auto 5rem auto; /* Reduces top margin and increases bottom */
+  padding: 2.5rem 3rem 3rem 3rem; /* Ajusta el padding si quieres más espacio dentro */
+  background: linear-gradient(to right, #0a1126, #0b214a);
+  border: 3px solid #00f0ff;
+  border-radius: 16px;
+  color: #f5f5f5;
+  font-family: 'Rajdhani', sans-serif;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Menos espacio arriba del título */
+.bloque-historia h2:first-of-type {
+  margin-top: 0.5rem;
+}
+
+/* Más espacio debajo del bloque frase final */
+.bloque-frase {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem; /* Aumentamos margen inferior */
+  color: #00f0ff;
+}
+.bloque-historia h1,
+.bloque-historia h2 {
+  color: #00f0ff;
+  border-bottom: 2px solid #00f0ff;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.bloque-historia p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #dceeff;
+}
+.bloque-historia:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .historia-industrial {
+    padding: 2rem 1rem;
+  }
+  .bloque-historia h2 {
+    font-size: 1.6rem;
+  }
+  .bloque-historia p {
+    font-size: 1.05rem;
+  }
+  .bloque-frase {
+    font-size: 1.05rem;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+.animado {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.animado.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

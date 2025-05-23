@@ -48,3 +48,21 @@ document.querySelectorAll('a[href^="#"]').forEach(ancla => {
     });
   });
 });
+
+
+// animaciones con IntersectionObserver
+document.addEventListener("DOMContentLoaded", () => {
+  const elementosAnimados = document.querySelectorAll('.animado');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  elementosAnimados.forEach(el => observer.observe(el));
+});
