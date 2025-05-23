@@ -1288,15 +1288,17 @@ main.bienvenida {
 
 @media screen and (max-width: 768px) {
   .bloque-enlaces-internos {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
   }
 
   .card-enlace {
-    width: 85%;
-    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
+
 
 /* 🎯 HISTORIA BJM - ESTILO INDUSTRIAL DISTINTIVO */
 
@@ -1400,4 +1402,54 @@ main.bienvenida {
 .animado.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ✅ Ajustes responsive para QUIENES SOMOS en móviles */
+@media screen and (max-width: 768px) {
+  .bloque-institucional {
+    width: 100%;
+    padding: 2rem 1rem;
+    margin: 2rem auto;
+    box-sizing: border-box;
+    border-radius: 12px;
+  }
+
+  .introduccion-bjm h2 {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .introduccion-bjm p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .destacado-frase {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .valores-bjm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .valor-item {
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .bloque-historia p {
+    text-align: center;
+  }
 }
