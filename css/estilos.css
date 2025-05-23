@@ -8,6 +8,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 /* ---------- BANNER SUPERIOR (REESTRUCTURADO) ---------- */
 .banner-top {
@@ -1085,7 +1089,7 @@ main.bienvenida {
 
 /* 💥 BLOQUE INSTITUCIONAL POTENTE Y VISUAL */
 .bloque-institucional {
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 4rem 0;
   background: linear-gradient(to bottom right, #10141a, #0b214a);
@@ -1297,7 +1301,7 @@ main.bienvenida {
 /* 🎯 HISTORIA BJM - ESTILO INDUSTRIAL DISTINTIVO */
 
 .historia-contenedor {
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 4rem 1.5rem;
   background: linear-gradient(to right, #0a1126, #0b214a);
