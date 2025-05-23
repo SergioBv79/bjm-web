@@ -1131,6 +1131,7 @@ main.bienvenida {
   font-weight: 600;
   padding: 1.2rem 2rem;
   border-left: 5px solid #00ffff;
+  border-right: 5px solid #00ffff;
   border-radius: 10px;
   text-align: center;
   width: 100%;
