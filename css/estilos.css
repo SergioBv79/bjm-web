@@ -1453,3 +1453,30 @@ main.bienvenida {
     text-align: center;
   }
 }
+
+.bloque-cta {
+  text-align: center;
+}
+.bloque-cta a {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .bienvenida {
+    text-align: center;
+  }
+
+  .bienvenida h1,
+  .bienvenida h2,
+  .bienvenida p {
+    text-align: center;
+  }
+
+  .bloque-bienvenida .bloque-texto ul {
+    padding-left: 0;
+    text-align: left; /* si prefieres dejar la lista alineada a la izquierda */
+  }
+}
+
+
