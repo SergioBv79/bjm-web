@@ -1663,3 +1663,91 @@ main.bienvenida {
     max-width: 85vw;
   }
 }
+.como-trabajamos {
+  margin: 4rem auto 2rem;
+  max-width: 1100px;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #0a1126, #0b214a);
+  color: #dceeff;
+  border-top: 4px solid #00f0ff;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
+}
+
+.como-trabajamos.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.como-trabajamos h2 {
+  font-size: 2rem;
+  color: #00ffff;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #00ffff;
+  padding-bottom: 0.5rem;
+}
+
+.intro-compromiso {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  color: #ffffff;
+}
+
+.bloques-trabajo {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.bloque-item {
+  background: #1c2d3c;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  flex: 1 1 30%;
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+  text-align: center;
+}
+
+.bloque-item i {
+  font-size: 2rem;
+  color: #00ffff;
+  margin-bottom: 1rem;
+}
+
+.bloque-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #4ecdc4;
+}
+
+.bloque-item p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #dceeff;
+}
+
+/* ✅ Responsive */
+@media screen and (max-width: 768px) {
+  .bloques-trabajo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bloque-item {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .como-trabajamos h2 {
+    font-size: 1.6rem;
+  }
+
+  .intro-compromiso {
+    font-size: 1.05rem;
+  }
+}
