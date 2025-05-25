@@ -9,8 +9,8 @@ document.getElementById("footer").innerHTML = `
       <div class="footer-info">
         <h4>BJM Mantenimientos y Servicios Industriales</h4>
         <p>El Puerto de Santa María &middot; Cádiz</p>
-        <p>Teléfono: <a href="tel:+34600000000">600 000 000</a></p>
-        <p>Email: <a href="mailto:info@bjm.com">info@bjm.com</a></p>
+        <p>Teléfono: <a href="tel:+34 615975960">615 975 960</a></p>
+        <p>Email: <a href="mailto:contacto@bjmantenimientos.es">contacto@bjmantenimientos.es</a></p>
         <p>
           <a href="https://www.google.com/maps?q=Calle+Aries+6,+El+Puerto+de+Santa+María,+11500,+Cádiz,+Spain" 
              target="_blank" 

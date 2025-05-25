@@ -14,8 +14,9 @@
 <body>
   <header id="header"></header>
 
-  <main class="mvv-bjm">
+  <main class="mvv-bjm bloque-con-bordes">
 
+    <!-- Misión -->
     <section class="bloque-mvv animar-aparicion">
       <div class="mvv-bloque">
         <div class="mvv-texto">
@@ -33,6 +34,7 @@
       </div>
     </section>
 
+    <!-- Visión -->
     <section class="bloque-mvv animar-aparicion">
       <div class="mvv-bloque vision-invertida">
         <div class="mvv-imagen">
@@ -50,6 +52,7 @@
       </div>
     </section>
 
+    <!-- Valores -->
     <section class="bloque-mvv animar-aparicion">
       <div class="mvv-bloque">
         <div class="mvv-texto">
@@ -71,7 +74,6 @@
 
   </main>
 
-  <!-- BOTÓN VOLVER ARRIBA -->
   <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
@@ -79,7 +81,6 @@
     // Efecto de aparición con scroll
     document.addEventListener('DOMContentLoaded', () => {
       const elementosAnimar = document.querySelectorAll('.animar-aparicion');
-
       const mostrarElemento = (entrada, observador) => {
         entrada.forEach(e => {
           if (e.isIntersecting) {
@@ -88,11 +89,9 @@
           }
         });
       };
-
       const observador = new IntersectionObserver(mostrarElemento, {
         threshold: 0.2
       });
-
       elementosAnimar.forEach(el => observador.observe(el));
     });
   </script>
