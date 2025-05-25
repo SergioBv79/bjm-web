@@ -3,20 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página en construcción</title>
+  <title>Misión, Visión y Valores | BJM Mantenimientos</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&family=Pacifico&display=swap" />
+  <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon">
   <script src="../js/header.js" defer></script>
   <script src="../js/footer.js" defer></script>
 </head>
 <body>
   <header id="header"></header>
 
-  <main class="pagina-construccion">
-    <h1>🚧 Esta sección está en construcción</h1>
-    <p>Estamos trabajando para traerte algo espectacular.</p>
+  <main class="mvv-bjm">
+
+    <section class="bloque-mvv animar-aparicion">
+      <div class="mvv-bloque">
+        <div class="mvv-texto">
+          <h2 class="mvv-titulo mision">Misión</h2>
+          <p class="mvv-parrafo">
+            Ofrecer servicios de mantenimiento industrial y técnico especializados, con la máxima eficiencia, seguridad y fiabilidad, contribuyendo al rendimiento óptimo de cada cliente.
+          </p>
+          <p class="mvv-parrafo">
+            Nuestra misión es mantener la industria activa. Aportamos soluciones técnicas ejecutables y sostenibles, que prolongan la vida útil de las instalaciones y reducen costes a medio y largo plazo.
+          </p>
+        </div>
+        <div class="mvv-imagen">
+          <img src="../img/prueba mision.jpg" alt="Técnico revisando instalaciones industriales">
+        </div>
+      </div>
+    </section>
+
+    <section class="bloque-mvv animar-aparicion">
+      <div class="mvv-bloque vision-invertida">
+        <div class="mvv-imagen">
+          <img src="../img/prueba vision.jpg" alt="Fábrica moderna y automatizada">
+        </div>
+        <div class="mvv-texto">
+          <h2 class="mvv-titulo vision">Visión</h2>
+          <p class="mvv-parrafo">
+            Ser referentes en mantenimiento industrial integral, destacando por nuestra capacidad técnica, rapidez de intervención y adaptación a entornos complejos.
+          </p>
+          <p class="mvv-parrafo">
+            Queremos transformar el mantenimiento en una herramienta estratégica, alineada con los objetivos de productividad, sostenibilidad y evolución tecnológica del cliente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloque-mvv animar-aparicion">
+      <div class="mvv-bloque">
+        <div class="mvv-texto">
+          <h2 class="mvv-titulo valores">Valores</h2>
+          <ul class="valores-lista">
+            <li><strong> Compromiso real:</strong> Estamos cuando se nos necesita, incluso antes.</li>
+            <li><strong> Precisión técnica:</strong> Diagnóstico certero, intervención eficaz.</li>
+            <li><strong> Confianza profesional:</strong> Relaciones a largo plazo, sin improvisaciones.</li>
+            <li><strong> Formación continua:</strong> Nunca dejamos de aprender, para poder responder.</li>
+            <li><strong> Seguridad y prevención:</strong> Primero las personas, siempre.</li>
+            <li><strong> Sostenibilidad industrial:</strong> Soluciones que piensan en hoy y en mañana.</li>
+          </ul>
+        </div>
+        <div class="mvv-imagen">
+          <img src="../img/prueba valores.jpg" alt="Equipo técnico colaborando">
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
+
+  <script>
+    // Efecto de aparición con scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementosAnimar = document.querySelectorAll('.animar-aparicion');
+
+      const mostrarElemento = (entrada, observador) => {
+        entrada.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observador.unobserve(e.target);
+          }
+        });
+      };
+
+      const observador = new IntersectionObserver(mostrarElemento, {
+        threshold: 0.2
+      });
+
+      elementosAnimar.forEach(el => observador.observe(el));
+    });
+  </script>
 </body>
 </html>

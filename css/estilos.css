@@ -1791,3 +1791,113 @@ main.bienvenida {
     font-size: 1.05rem;
   }
 }
+
+
+/* mision vison, valores */
+
+.mvv-bjm {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(to right, #0a1126, #0b214a);
+  color: #dceeff;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.bloque-mvv {
+  margin: 3rem auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.mvv-bloque {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.mvv-bloque.vision-invertida {
+  flex-direction: row-reverse;
+}
+
+.mvv-texto {
+  flex: 1 1 500px;
+}
+
+.mvv-imagen {
+  flex: 1 1 500px;
+}
+
+.mvv-imagen img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0,255,255,0.15);
+}
+
+.mvv-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #00ffff;
+  padding-bottom: 0.4rem;
+  font-family: 'Pacifico', cursive;
+}
+
+.mvv-titulo.mision {
+  color: #00cfff;
+}
+
+.mvv-titulo.vision {
+  color: #ff8c42;
+}
+
+.mvv-titulo.valores {
+  color: #4ecdc4;
+}
+
+.mvv-parrafo {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.valores-lista {
+  list-style: none;
+  padding-left: 0;
+}
+
+.valores-lista li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.valores-lista li::before {
+  content: "✔";
+  color: #00ffff;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .mvv-bloque {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mvv-texto {
+    flex: 1 1 100%;
+  }
+
+  .mvv-titulo {
+    font-size: 1.6rem;
+  }
+
+  .mvv-parrafo {
+    font-size: 1.05rem;
+  }
+
+  .valores-lista li {
+    font-size: 1rem;
+  }
+}
