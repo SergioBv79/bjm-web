@@ -1095,8 +1095,8 @@ main.bienvenida {
   background: linear-gradient(to bottom right, #10141a, #0b214a);
   color: #f4f4f4;
   font-family: 'Rajdhani', sans-serif;
-  border-top: 4px solid #2c2c2c;
-  border-bottom: 4px solid #2c2c2c;
+  border-top: 4px solid #00f0ff;
+  border-bottom: 4px solid #00f0ff;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
   position: relative;
   overflow: hidden;
@@ -1467,7 +1467,6 @@ main.bienvenida {
     text-align: center;
   }
 
-  .bienvenida h1,
   .bienvenida h2,
   .bienvenida p {
     text-align: center;
@@ -1479,4 +1478,188 @@ main.bienvenida {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .bienvenida h1,
+  .bienvenida .intro-destacada {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+    max-width: 95%;
+  }
 
+  .bienvenida h1 {
+    font-size: 1.7rem;
+    line-height: 1.4;
+  }
+}
+
+/* === EQUIPO - SECCIÓN === */
+.equipo-bjm {
+  background: linear-gradient(to right, #0a1126, #0b214a);
+  padding: 6rem 2rem 4rem;
+  color: #dceeff;
+  font-family: 'Rajdhani', sans-serif;
+  text-align: center;
+  border-top: 4px solid #00f0ff;
+}
+
+/* === INTRO EQUIPO - BLOQUE ANIMADO === */
+.equipo-intro {
+  max-width: 1100px;
+  margin: 0 auto 4rem auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #0a1126, #0b214a);
+  color: #dceeff;
+  border-radius: 16px;
+  border-left: 5px solid #00ffff;
+  border-right: 5px solid #00ffff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
+}
+
+.equipo-intro.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.equipo-intro h2 {
+  font-size: 2rem;
+  color: #00ffff;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #00ffff;
+  padding-bottom: 0.5rem;
+}
+
+.equipo-intro p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.equipo-intro strong {
+  color: #ffffff;
+}
+
+.frase-equipo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00f0ff;
+  background-color: #1c2d3c;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,255,255,0.2);
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.frase-equipo i {
+  margin-right: 0.5rem;
+  color: #00f0ff;
+}
+
+/* ✅ Responsive */
+@media screen and (max-width: 768px) {
+  .equipo-bjm {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+
+  .equipo-intro {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .equipo-intro h2 {
+    font-size: 1.6rem;
+  }
+
+  .equipo-intro p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+
+  .frase-equipo {
+    font-size: 1.05rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+/* === CARRUSEL EQUIPO === */
+.carrusel-equipo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.carrusel-contenido {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem;
+  max-width: 95%;
+  scrollbar-width: none;
+}
+
+.carrusel-contenido::-webkit-scrollbar {
+  display: none;
+}
+
+.card-persona {
+  background: #1c2d3c;
+  border-radius: 12px;
+  padding: 1rem;
+  color: #fff;
+  text-align: center;
+  min-width: 220px;
+  max-width: 220px;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+}
+
+.card-persona:hover {
+  transform: translateY(-6px);
+}
+
+.card-persona img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-persona h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.2rem;
+  color: #4ecdc4;
+}
+
+.carrusel-btn {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #00f0ff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .card-persona {
+    min-width: 85vw;
+    max-width: 85vw;
+  }
+}
