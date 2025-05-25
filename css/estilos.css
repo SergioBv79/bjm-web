@@ -1794,6 +1794,11 @@ main.bienvenida {
 
 
 /* mision vison, valores */
+/* mision vision valores */
+.bloque-con-bordes {
+  border-top: 4px solid #00f0ff;
+  border-bottom: 4px solid #00f0ff;
+}
 
 .mvv-bjm {
   padding: 3rem 1.5rem;
@@ -1847,11 +1852,9 @@ main.bienvenida {
 .mvv-titulo.mision {
   color: #00cfff;
 }
-
 .mvv-titulo.vision {
   color: #ff8c42;
 }
-
 .mvv-titulo.valores {
   color: #4ecdc4;
 }
@@ -1866,12 +1869,10 @@ main.bienvenida {
   list-style: none;
   padding-left: 0;
 }
-
 .valores-lista li {
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
-
 .valores-lista li::before {
   content: "✔";
   color: #00ffff;
@@ -1879,6 +1880,7 @@ main.bienvenida {
   margin-right: 0.5rem;
 }
 
+/* Responsive */
 @media screen and (max-width: 768px) {
   .mvv-bloque {
     flex-direction: column;
@@ -1886,6 +1888,10 @@ main.bienvenida {
   }
 
   .mvv-texto {
+    flex: 1 1 100%;
+  }
+
+  .mvv-imagen {
     flex: 1 1 100%;
   }
 
