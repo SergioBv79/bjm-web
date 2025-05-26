@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto | BJM Mantenimientos</title>
-  <link rel="stylesheet" href="./css/estilos.css" />
+  <link rel="stylesheet" href="../css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
-  <link rel="icon" href="./icons/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
+  <script src="../js/header.js" defer></script>
+  <script src="../js/footer.js" defer></script>
 </head>
 <body>
   <header id="header"></header>
@@ -15,24 +17,27 @@
   <main class="contacto-bjm animar-aparicion">
     <h1><i class="fas fa-envelope-open-text"></i> Contacto</h1>
 
-    <!-- 🔒 Bloqueo si no acepta cookies -->
-    <div id="bloqueo-formulario" style="display: none;" class="bloqueo-cookies-form">
-      <p>Este formulario solo estará disponible cuando aceptes las cookies analíticas.</p>
-      <button id="abrir-config-contacto" class="boton-enviar">Cambiar configuración de cookies</button>
-    </div>
+   <!-- 🔒 Mensaje de bloqueo por cookies -->
+<div id="bloqueo-formulario" style="display: none;" class="bloqueo-cookies-form">
+  <p>Este formulario solo estará disponible cuando aceptes las cookies analíticas.</p>
+  <button id="abrir-config-contacto" class="boton-enviar">Cambiar configuración de cookies</button>
+</div>
 
-    <!-- ✅ Formulario real -->
+
+    <!-- ✅ Formulario envuelto para poder ocultarlo si no se aceptan cookies -->
     <div id="formulario-contacto-wrapper">
       <section class="formulario-contacto">
         <form action="https://formsubmit.co/serborve@gmail.com" method="POST">
-          <!-- ✅ Cuando publiques en dominio real, cambia por:
-               https://formsubmit.co/bjmcontacto@bjm-mantenimientos.com -->
+          <!-- ✅ En producción, sustituir por:
+               https://formsubmit.co/contacto@bjmantenimientos.com -->
 
-          <input type="hidden" name="_next" value="gracias.html" />
-          <!-- ✅ En producción:
+          <input type="hidden" name="_next" value="https://sergiobv79.github.io/bjm-web/gracias.html" />
+          <!-- ✅ En dominio real:
                https://www.bjm-mantenimientos.com/gracias.html -->
 
           <input type="hidden" name="_captcha" value="false" />
+
+          <!-- Campo oculto que se envía con el consentimiento -->
           <input type="hidden" name="consentimiento" value="✅ El usuario aceptó el tratamiento de datos personales según la cláusula del formulario." />
 
           <label for="nombre">Nombre*</label>
@@ -47,6 +52,7 @@
           <label for="mensaje">Mensaje*</label>
           <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
+          <!-- Casilla RGPD -->
           <div class="consentimiento">
             <label for="acepto">
               <input type="checkbox" id="acepto" name="acepto" required />
@@ -69,7 +75,11 @@
       <div class="mapa">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3202.6877006524223!2d-6.224013425465787!3d36.609829922302055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1748202942854!5m2!1ses!2ses"
-          width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -83,51 +93,70 @@
   <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
-  <!-- Scripts JS -->
-  <script src="./js/header.js" defer></script>
-  <script src="./js/footer.js" defer></script>
-  <script src="./js/scripts.js" defer></script>
-  <script src="./js/menu.js" defer></script>
-  <script src="./js/cookies.js" defer></script>
-
-  <!-- Bloqueo y activación del formulario -->
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/cookies.js"></script>
+  <script src="js/menu.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const wrapper = document.getElementById('formulario-contacto-wrapper');
-      const bloqueo = document.getElementById('bloqueo-formulario');
-      const modal = document.getElementById('cookie-config-modal');
-      const btnAbrir = document.getElementById("abrir-config-contacto");
-
-      // Abrir modal desde el botón del mensaje de bloqueo
-      if (btnAbrir && modal) {
-        btnAbrir.addEventListener("click", () => {
-          modal.classList.remove("oculto");
-        });
-      }
-
-      // Mostrar u ocultar formulario según cookies aceptadas
-      function cookiesAnaliticasAceptadas() {
-        const estado = localStorage.getItem("cookies_accepted");
-        if (estado === "all") return true;
-        if (estado === "custom") {
-          try {
-            const prefs = JSON.parse(localStorage.getItem("cookies_custom"));
-            return prefs?.analytics === true;
-          } catch {
-            return false;
+    // Animaciones scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const elementosAnimar = document.querySelectorAll('.animar-aparicion');
+      const mostrarElemento = (entrada, observador) => {
+        entrada.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observador.unobserve(e.target);
           }
-        }
-        return false;
-      }
+        });
+      };
+      const observador = new IntersectionObserver(mostrarElemento, { threshold: 0.2 });
+      elementosAnimar.forEach(el => observador.observe(el));
 
-      if (cookiesAnaliticasAceptadas()) {
-        wrapper.style.display = "block";
-        bloqueo.style.display = "none";
-      } else {
-        wrapper.style.display = "none";
-        bloqueo.style.display = "block";
-      }
+      // 🔒 Bloqueo de formulario si no hay cookies analíticas
+    const wrapper = document.getElementById('formulario-contacto-wrapper');
+const bloqueo = document.getElementById('bloqueo-formulario');
+
+function cookiesAnaliticasAceptadas() {
+  const aceptadas = localStorage.getItem("cookies_accepted");
+
+  if (aceptadas === "all") return true;
+  if (aceptadas === "custom") {
+    try {
+      const personalizadas = JSON.parse(localStorage.getItem("cookies_custom"));
+      return personalizadas?.analytics === true;
+    } catch (e) {
+      return false;
+    }
+  }
+  return false;
+}
+
+if (cookiesAnaliticasAceptadas()) {
+  if (wrapper) wrapper.style.display = 'block';
+  if (bloqueo) bloqueo.style.display = 'none';
+} else {
+  if (wrapper) wrapper.style.display = 'none';
+  if (bloqueo) bloqueo.style.display = 'block';
+}
+
     });
+
+    function abrirConfiguracionCookies() {
+      // Este botón abrirá la ventana de configuración de cookies si está implementada
+      document.querySelector("#boton-configurar-cookies")?.click();
+    }
+    // 🔁 Botón para abrir modal de configuración de cookies desde contacto.html
+document.addEventListener("DOMContentLoaded", () => {
+  const boton = document.getElementById("abrir-config-contacto");
+  const modal = document.getElementById("cookie-config-modal");
+  if (boton && modal) {
+    boton.addEventListener("click", () => {
+      modal.classList.remove("oculto");
+    });
+  }
+});
+
   </script>
 </body>
 </html>
