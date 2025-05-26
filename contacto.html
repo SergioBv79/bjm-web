@@ -19,16 +19,16 @@
 
     <section class="formulario-contacto">
       <form action="https://formsubmit.co/serborve@gmail.com" method="POST">
-        <!-- ✅ Cuando publiques la web en tu dominio real, cambia esto por:
-             action="https://formsubmit.co/bjmcontacto@bjm-mantenimientos.com" 
-        -->
+        <!-- ✅ Cuando publiques en tu dominio real, cambia esto por:
+             action="https://formsubmit.co/bjmcontacto@bjm-mantenimientos.com" -->
 
         <input type="hidden" name="_next" value="https://sergiobv79.github.io/bjm-web/gracias.html" />
-        <!-- ✅ Cuando tengas dominio real, cámbialo por:
-             https://www.bjm-mantenimientos.com/gracias.html 
-        -->
+        <!-- ✅ En dominio real, cambia por: https://www.bjm-mantenimientos.com/gracias.html -->
 
         <input type="hidden" name="_captcha" value="false" />
+
+        <!-- Este campo se enviará en el correo con el valor del consentimiento -->
+        <input type="hidden" name="consentimiento" value="✅ El usuario aceptó el tratamiento de datos personales según la cláusula del formulario." />
 
         <label for="nombre">Nombre*</label>
         <input type="text" id="nombre" name="nombre" required />
@@ -42,30 +42,35 @@
         <label for="mensaje">Mensaje*</label>
         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
+        <!-- Casilla de aceptación RGPD -->
+        <div class="consentimiento">
+          <label for="acepto">
+            <input type="checkbox" id="acepto" name="acepto" required />
+            Autorizo el tratamiento de mis datos personales con el único fin de gestionar esta solicitud de contacto, incluyendo la posible respuesta por teléfono o correo electrónico. 
+            Soy consciente de que puedo revocar este consentimiento en cualquier momento.*
+          </label>
+        </div>
+
         <button type="submit" class="boton-enviar">Enviar mensaje</button>
       </form>
     </section>
 
     <section class="datos-contacto">
       <h2><i class="fas fa-map-marker-alt"></i> Dónde estamos</h2>
-      <p><strong>Dirección:</strong> Calle Aries (La Florida) 6, El Puerto de Santa María, 11500, Cádiz, Spain</p>
+      <p><strong>Dirección:</strong> Calle Aries (La Florida) 6, El Puerto de Santa María, 11500, Cádiz, España</p>
       <p><strong>Teléfono:</strong> <a href="tel:+34615975960">615 97 59 60</a></p>
       <p><strong>Email:</strong> <a href="mailto:contacto@bjmantenimientos.es">contacto@bjmantenimientos.es</a></p>
 
       <div class="mapa">
-        <!-- Puedes sustituir este iframe por el código real de Google Maps -->
-        <div class="mapa">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3202.6877006524223!2d-6.224013425465787!3d36.609829922302055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1748202942854!5m2!1ses!2ses"
-    width="100%"
-    height="300"
-    style="border:0;"
-    allowfullscreen
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
-
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3202.6877006524223!2d-6.224013425465787!3d36.609829922302055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1748202942854!5m2!1ses!2ses"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
 
       <a class="whatsapp-contacto" href="https://wa.me/34615975960" target="_blank" rel="noopener">
