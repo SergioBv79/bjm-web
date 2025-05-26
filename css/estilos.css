@@ -1908,6 +1908,15 @@ main.bienvenida {
   }
 }
 
+/* 🔷 Fondo institucional estilo industrial */
+.bloque-institucional-fondo {
+  width: 100%;
+  background: linear-gradient(to bottom right, #10141a, #0b214a);
+  padding: 4rem 0;
+  border-top: 4px solid #00f0ff;
+  border-bottom: 4px solid #00f0ff;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+}
 
 /* 📩 CONTACTO */
 .contacto-bjm {
@@ -2152,3 +2161,5 @@ main.bienvenida {
 .boton-volver:hover {
   background-color: #00cfff;
 }
+
+

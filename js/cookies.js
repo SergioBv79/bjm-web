@@ -3,40 +3,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const consent = localStorage.getItem("cookies_accepted");
 
-  const bannerHTML = `
-    <div id="cookie-banner" class="cookie-banner">
-      <p>Este sitio utiliza cookies para mejorar la experiencia del usuario y analizar el tráfico. Puedes aceptar todas, rechazarlas o configurarlas.</p>
-      <div class="cookie-buttons">
-        <button id="accept-cookies">Aceptar todas</button>
-        <button id="reject-cookies">Rechazar</button>
-        <button id="configure-cookies">Configurar</button>
-      </div>
-    </div>
-  `;
+  const bannerHTML = `...`; // Tu HTML de banner (sin cambios)
+  const configHTML = `...`; // Tu HTML de configuración (sin cambios)
 
-  const configHTML = `
-    <div id="cookie-config-modal" class="cookie-modal oculto">
-      <div class="cookie-modal-contenido configuracion-cookies animar-aparicion">
-        <h2><i class="fas fa-cogs"></i> Configuración de cookies</h2>
-        <form id="cookie-options">
-          <label><input type="checkbox" disabled checked> Cookies necesarias (siempre activas)</label><br>
-          <label><input type="checkbox" id="analytics"> Cookies estadísticas</label><br>
-          <label><input type="checkbox" id="marketing"> Cookies de marketing</label><br>
-          <div class="cookie-modal-botones">
-            <button type="submit">Guardar configuración</button>
-            <button type="button" id="close-config">Cancelar</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  `;
-
-  // Insertar siempre el panel de configuración para que funcione la galleta
   document.body.insertAdjacentHTML("beforeend", configHTML);
-
   const modal = document.getElementById("cookie-config-modal");
 
-  // Mostrar el banner SOLO si estamos en index.html o raíz
   const path = window.location.pathname;
   const esIndex = path.endsWith("index.html") || path === "/" || path.endsWith("/");
 
@@ -48,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const openConfig = document.getElementById("abrir-configuracion-cookies");
-
   if (openConfig) {
     openConfig.addEventListener("click", () => {
       modal.classList.remove("oculto");
@@ -63,18 +34,22 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.addEventListener("click", function (e) {
-    if (e.target.id === "configure-cookies") {
-      modal.classList.remove("oculto");
-    }
-    if (e.target.id === "close-config") {
-      modal.classList.add("oculto");
-    }
+    if (e.target.id === "configure-cookies") modal.classList.remove("oculto");
+    if (e.target.id === "close-config") modal.classList.add("oculto");
     if (e.target.id === "accept-cookies") {
       localStorage.setItem("cookies_accepted", "all");
       const banner = document.getElementById("cookie-banner");
       if (banner) banner.remove();
       modal.classList.add("oculto");
       activarGoogleAnalyticsSiProcede();
+
+      // 🔥 NUEVO: Mostrar formulario directamente si existe
+      const wrapper = document.getElementById('formulario-contacto-wrapper');
+      const bloqueo = document.getElementById('bloqueo-formulario');
+      if (wrapper && bloqueo) {
+        wrapper.style.display = "block";
+        bloqueo.style.display = "none";
+      }
     }
     if (e.target.id === "reject-cookies") {
       localStorage.setItem("cookies_accepted", "necessary");
@@ -97,6 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (banner) banner.remove();
       modal.classList.add("oculto");
       activarGoogleAnalyticsSiProcede();
+
+      // 🔥 NUEVO: Mostrar formulario directamente si se acepta analytics
+      const wrapper = document.getElementById('formulario-contacto-wrapper');
+      const bloqueo = document.getElementById('bloqueo-formulario');
+      if (accepted.analytics && wrapper && bloqueo) {
+        wrapper.style.display = "block";
+        bloqueo.style.display = "none";
+      }
     }
   });
 });
@@ -104,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // ✅ ACTIVACIÓN DE GOOGLE ANALYTICS SOLO SI HAY CONSENTIMIENTO DE MARKETING
 function activarGoogleAnalyticsSiProcede() {
   const consentimiento = localStorage.getItem("cookies_accepted");
-
   if (consentimiento === "all") {
     inyectarGA();
   } else if (consentimiento === "custom") {
