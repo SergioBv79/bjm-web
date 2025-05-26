@@ -1,3 +1,4 @@
+
 // Archivo: js/scripts.js
 
 // Mostrar botón "volver arriba" cuando se hace scroll
@@ -21,24 +22,25 @@ if (btnTop) {
 // Placeholder inicial para la lógica futura de cookies flotantes avanzadas
 // Aquí insertaremos la ventana emergente de la configuracion de cookies
 // Se activará desde cookies.js más adelante
- 
+
 document.addEventListener("DOMContentLoaded", function () {
   const frase = document.querySelector(".frase-destacada");
 
-  function checkFraseVisible() {
-    const rect = frase.getBoundingClientRect();
-    const triggerPoint = window.innerHeight * 0.85;
+  if (frase) { // ✅ comprobamos que exista antes de usarla
+    function checkFraseVisible() {
+      const rect = frase.getBoundingClientRect();
+      const triggerPoint = window.innerHeight * 0.85;
 
-    if (rect.top < triggerPoint) {
-      frase.classList.add("visible");
-      window.removeEventListener("scroll", checkFraseVisible);
+      if (rect.top < triggerPoint) {
+        frase.classList.add("visible");
+        window.removeEventListener("scroll", checkFraseVisible);
+      }
     }
+
+    window.addEventListener("scroll", checkFraseVisible);
+    checkFraseVisible(); // por si ya está visible al cargar
   }
-
-  window.addEventListener("scroll", checkFraseVisible);
-  checkFraseVisible(); // por si ya está visible al cargar
 });
-
 
 document.querySelectorAll('a[href^="#"]').forEach(ancla => {
   ancla.addEventListener('click', function (e) {
@@ -48,7 +50,6 @@ document.querySelectorAll('a[href^="#"]').forEach(ancla => {
     });
   });
 });
-
 
 // animaciones con IntersectionObserver
 document.addEventListener("DOMContentLoaded", () => {
@@ -66,5 +67,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elementosAnimados.forEach(el => observer.observe(el));
 });
-
 

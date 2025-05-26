@@ -847,7 +847,9 @@ main.bienvenida {
   background-color: #f0f0f0;
 }
 
+/* ✅ Modal oculto por defecto */
 .cookie-modal {
+  display: none;  /* Nunca visible al cargar */
   position: fixed;
   top: 0;
   left: 0;
@@ -855,10 +857,15 @@ main.bienvenida {
   height: 100%;
   background: rgba(0,0,0,0.65);
   z-index: 99999;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* ✅ Solo visible cuando no tiene la clase .oculto */
+.cookie-modal:not(.oculto) {
+  display: flex;
+}
+
 
 .cookie-modal-contenido {
   background: white;
