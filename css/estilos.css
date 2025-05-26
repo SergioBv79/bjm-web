@@ -2016,6 +2016,51 @@ main.bienvenida {
   transform: scale(1.05);
 }
 
+.consentimiento {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #dceeff;
+}
+
+.consentimiento input[type="checkbox"] {
+  margin-top: 0.2rem;
+  margin-right: 0.5rem;
+  transform: scale(1.2);
+  accent-color: #00f0ff;
+}
+
+.consentimiento label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: normal;
+}
+.bloqueo-cookies-form {
+  padding: 2rem;
+  text-align: center;
+  background-color: #1a2a3a;
+  border: 2px dashed #00f0ff;
+  border-radius: 12px;
+  color: #dceeff;
+  margin-bottom: 2rem;
+}
+
+.bloqueo-cookies-form p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.bloqueo-cookies-form .boton-enviar {
+  background-color: #00f0ff;
+  color: #0a1126;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* ✅ Responsive */
 @media screen and (max-width: 768px) {
   .contacto-bjm {

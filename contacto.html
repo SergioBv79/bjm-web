@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto | BJM Mantenimientos</title>
-  <link rel="stylesheet" href="../css/estilos.css" />
+  <link rel="stylesheet" href="./css/estilos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" />
-  <link rel="icon" href="../icons/favicons/favicon.ico" type="image/x-icon" />
-  <script src="../js/header.js" defer></script>
-  <script src="../js/footer.js" defer></script>
+  <link rel="icon" href="./icons/favicons/favicon.ico" type="image/x-icon" />
 </head>
 <body>
   <header id="header"></header>
@@ -17,43 +15,50 @@
   <main class="contacto-bjm animar-aparicion">
     <h1><i class="fas fa-envelope-open-text"></i> Contacto</h1>
 
-    <section class="formulario-contacto">
-      <form action="https://formsubmit.co/serborve@gmail.com" method="POST">
-        <!-- ✅ Cuando publiques en tu dominio real, cambia esto por:
-             action="https://formsubmit.co/bjmcontacto@bjm-mantenimientos.com" -->
+    <!-- 🔒 Bloqueo si no acepta cookies -->
+    <div id="bloqueo-formulario" style="display: none;" class="bloqueo-cookies-form">
+      <p>Este formulario solo estará disponible cuando aceptes las cookies analíticas.</p>
+      <button id="abrir-config-contacto" class="boton-enviar">Cambiar configuración de cookies</button>
+    </div>
 
-        <input type="hidden" name="_next" value="https://sergiobv79.github.io/bjm-web/gracias.html" />
-        <!-- ✅ En dominio real, cambia por: https://www.bjm-mantenimientos.com/gracias.html -->
+    <!-- ✅ Formulario real -->
+    <div id="formulario-contacto-wrapper">
+      <section class="formulario-contacto">
+        <form action="https://formsubmit.co/serborve@gmail.com" method="POST">
+          <!-- ✅ Cuando publiques en dominio real, cambia por:
+               https://formsubmit.co/bjmcontacto@bjm-mantenimientos.com -->
 
-        <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="gracias.html" />
+          <!-- ✅ En producción:
+               https://www.bjm-mantenimientos.com/gracias.html -->
 
-        <!-- Este campo se enviará en el correo con el valor del consentimiento -->
-        <input type="hidden" name="consentimiento" value="✅ El usuario aceptó el tratamiento de datos personales según la cláusula del formulario." />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="consentimiento" value="✅ El usuario aceptó el tratamiento de datos personales según la cláusula del formulario." />
 
-        <label for="nombre">Nombre*</label>
-        <input type="text" id="nombre" name="nombre" required />
+          <label for="nombre">Nombre*</label>
+          <input type="text" id="nombre" name="nombre" required />
 
-        <label for="email">Correo electrónico*</label>
-        <input type="email" id="email" name="email" required />
+          <label for="email">Correo electrónico*</label>
+          <input type="email" id="email" name="email" required />
 
-        <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" />
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" />
 
-        <label for="mensaje">Mensaje*</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          <label for="mensaje">Mensaje*</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-        <!-- Casilla de aceptación RGPD -->
-        <div class="consentimiento">
-          <label for="acepto">
-            <input type="checkbox" id="acepto" name="acepto" required />
-            Autorizo el tratamiento de mis datos personales con el único fin de gestionar esta solicitud de contacto, incluyendo la posible respuesta por teléfono o correo electrónico. 
-            Soy consciente de que puedo revocar este consentimiento en cualquier momento.*
-          </label>
-        </div>
+          <div class="consentimiento">
+            <label for="acepto">
+              <input type="checkbox" id="acepto" name="acepto" required />
+              Autorizo el tratamiento de mis datos personales con el único fin de gestionar esta solicitud de contacto, incluyendo la posible respuesta por teléfono o correo electrónico. 
+              Soy consciente de que puedo revocar este consentimiento en cualquier momento.*
+            </label>
+          </div>
 
-        <button type="submit" class="boton-enviar">Enviar mensaje</button>
-      </form>
-    </section>
+          <button type="submit" class="boton-enviar">Enviar mensaje</button>
+        </form>
+      </section>
+    </div>
 
     <section class="datos-contacto">
       <h2><i class="fas fa-map-marker-alt"></i> Dónde estamos</h2>
@@ -64,11 +69,7 @@
       <div class="mapa">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3202.6877006524223!2d-6.224013425465787!3d36.609829922302055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1748202942854!5m2!1ses!2ses"
-          width="100%"
-          height="300"
-          style="border:0;"
-          allowfullscreen
-          loading="lazy"
+          width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -82,19 +83,50 @@
   <button id="btn-top" title="Volver arriba">&#8679;</button>
   <footer id="footer"></footer>
 
+  <!-- Scripts JS -->
+  <script src="./js/header.js" defer></script>
+  <script src="./js/footer.js" defer></script>
+  <script src="./js/scripts.js" defer></script>
+  <script src="./js/menu.js" defer></script>
+  <script src="./js/cookies.js" defer></script>
+
+  <!-- Bloqueo y activación del formulario -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const elementosAnimar = document.querySelectorAll('.animar-aparicion');
-      const mostrarElemento = (entrada, observador) => {
-        entrada.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observador.unobserve(e.target);
-          }
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrapper = document.getElementById('formulario-contacto-wrapper');
+      const bloqueo = document.getElementById('bloqueo-formulario');
+      const modal = document.getElementById('cookie-config-modal');
+      const btnAbrir = document.getElementById("abrir-config-contacto");
+
+      // Abrir modal desde el botón del mensaje de bloqueo
+      if (btnAbrir && modal) {
+        btnAbrir.addEventListener("click", () => {
+          modal.classList.remove("oculto");
         });
-      };
-      const observador = new IntersectionObserver(mostrarElemento, { threshold: 0.2 });
-      elementosAnimar.forEach(el => observador.observe(el));
+      }
+
+      // Mostrar u ocultar formulario según cookies aceptadas
+      function cookiesAnaliticasAceptadas() {
+        const estado = localStorage.getItem("cookies_accepted");
+        if (estado === "all") return true;
+        if (estado === "custom") {
+          try {
+            const prefs = JSON.parse(localStorage.getItem("cookies_custom"));
+            return prefs?.analytics === true;
+          } catch {
+            return false;
+          }
+        }
+        return false;
+      }
+
+      if (cookiesAnaliticasAceptadas()) {
+        wrapper.style.display = "block";
+        bloqueo.style.display = "none";
+      } else {
+        wrapper.style.display = "none";
+        bloqueo.style.display = "block";
+      }
     });
   </script>
 </body>
